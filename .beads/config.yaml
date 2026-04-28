@@ -1,5 +1,0 @@
-prefix: hq
-issue-prefix: hq
-dolt.idle-timeout: "0"
-
-routing.mode: "explicit"

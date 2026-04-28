@@ -19,10 +19,13 @@ export default function SearchForm({onResults}){
       if(!res.ok) throw new Error('Failed to fetch schedules');
       const data = await res.json();
       onResults(data || []);
-    }catch(e){
-      setErr(e.message);
+    } catch (e) {
+      console.error(e);
+      setErr('Unable to fetch schedules. Please try again later.');
       onResults([]);
-    }finally{ setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

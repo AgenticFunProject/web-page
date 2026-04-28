@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Portal - Shipping Booking</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Portal</h1>
+        <p class="subtitle">Book your shipping quickly and easily</p>
+    </header>
+
+    <main>
+        <!-- Step 1: Search & Select Schedule -->
+        <section id="search-section" class="active">
+            <h2>Search Schedules</h2>
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="origin">Origin Port</label>
+                    <input type="text" id="origin" name="origin" required placeholder="e.g., SGSIN (Singapore)">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination Port</label>
+                    <input type="text" id="destination" name="destination" required placeholder="e.g., USLAX (Los Angeles)">
+                </div>
+                <div class="form-group">
+                    <label for="date-from">Date Range</label>
+                    <div class="date-range">
+                        <input type="date" id="date-from" name="dateFrom" required>
+                        <span>to</span>
+                        <input type="date" id="date-to" name="dateTo" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Search Schedules</button>
+            </form>
+            <div id="search-results" class="results hidden">
+                <h3>Available Schedules</h3>
+                <div id="schedules-list"></div>
+            </div>
+        </section>
+
+        <!-- Step 2: Get a Quote -->
+        <section id="quote-section" class="hidden">
+            <h2>Get a Quote</h2>
+            <div id="selected-schedule" class="schedule-summary"></div>
+            <form id="quote-form">
+                <div class="form-group">
+                    <label for="equipment-type">Equipment Type</label>
+                    <select id="equipment-type" name="equipmentType" required>
+                        <option value="">Select equipment type</option>
+                        <option value="20ft">20ft Container</option>
+                        <option value="40ft">40ft Container</option>
+                        <option value="40ft HC">40ft High Cube</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargo-weight">Cargo Weight (kg)</label>
+                    <input type="number" id="cargo-weight" name="cargoWeight" min="1" required placeholder="e.g., 15000">
+                </div>
+                <button type="submit" class="btn btn-primary">Get Quote</button>
+                <button type="button" class="btn btn-secondary" onclick="showSection('search')">Back to Search</button>
+            </form>
+            <div id="quote-result" class="results hidden"></div>
+        </section>
+
+        <!-- Step 3: Place a Booking -->
+        <section id="booking-section" class="hidden">
+            <h2>Place Booking</h2>
+            <div id="quote-summary" class="quote-summary"></div>
+            <form id="booking-form">
+                <h3>Contact Details</h3>
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" name="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Phone</label>
+                    <input type="tel" id="contact-phone" name="contactPhone" required>
+                </div>
+                <h3>Cargo Details</h3>
+                <div class="form-group">
+                    <label for="cargo-description">Cargo Description</label>
+                    <textarea id="cargo-description" name="cargoDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="hs-code">HS Code (optional)</label>
+                    <input type="text" id="hs-code" name="hsCode" placeholder="e.g., 0901.21">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Booking</button>
+                <button type="button" class="btn btn-secondary" onclick="showSection('quote')">Back to Quote</button>
+            </form>
+        </section>
+
+        <!-- Step 4: Booking Confirmation -->
+        <section id="confirmation-section" class="hidden">
+            <h2>Booking Confirmed!</h2>
+            <div id="confirmation-details" class="confirmation"></div>
+            <button type="button" class="btn btn-primary" onclick="resetApp()">Make Another Booking</button>
+        </section>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error hidden"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Customer Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

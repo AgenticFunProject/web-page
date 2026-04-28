@@ -91,3 +91,8 @@ beads_hq/
 # =============================================================================
 # Note: .beads/ has its own .gitignore that handles database files
 # and keeps metadata.json, config file as source of truth
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key

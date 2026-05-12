@@ -1,0 +1,2480 @@
+{
+  "metadata": {
+    "source": "restcountries.com",
+    "generatedAt": "2026-05-12T12:01:10.671Z",
+    "totalCapitalCities": 247,
+    "note": "Each schedule origin is a capital city."
+  },
+  "schedules": [
+    {
+      "id": "cap-0001",
+      "vesselName": "Capital Carrier 01",
+      "voyageNumber": "CC-2026-0001",
+      "originPort": "Abu Dhabi",
+      "destinationPort": "Abuja",
+      "etd": "2026-05-20T08:00:00.000Z",
+      "eta": "2026-05-30T08:00:00.000Z",
+      "cutoffDate": "2026-05-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0002",
+      "vesselName": "Capital Carrier 02",
+      "voyageNumber": "CC-2026-0002",
+      "originPort": "Abuja",
+      "destinationPort": "Accra",
+      "etd": "2026-05-23T08:00:00.000Z",
+      "eta": "2026-06-03T08:00:00.000Z",
+      "cutoffDate": "2026-05-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0003",
+      "vesselName": "Capital Carrier 03",
+      "voyageNumber": "CC-2026-0003",
+      "originPort": "Accra",
+      "destinationPort": "Adamstown",
+      "etd": "2026-05-26T08:00:00.000Z",
+      "eta": "2026-06-07T08:00:00.000Z",
+      "cutoffDate": "2026-05-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0004",
+      "vesselName": "Capital Carrier 04",
+      "voyageNumber": "CC-2026-0004",
+      "originPort": "Adamstown",
+      "destinationPort": "Addis Ababa",
+      "etd": "2026-05-29T08:00:00.000Z",
+      "eta": "2026-06-11T08:00:00.000Z",
+      "cutoffDate": "2026-05-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0005",
+      "vesselName": "Capital Carrier 05",
+      "voyageNumber": "CC-2026-0005",
+      "originPort": "Addis Ababa",
+      "destinationPort": "Algiers",
+      "etd": "2026-06-01T08:00:00.000Z",
+      "eta": "2026-06-15T08:00:00.000Z",
+      "cutoffDate": "2026-05-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0006",
+      "vesselName": "Capital Carrier 06",
+      "voyageNumber": "CC-2026-0006",
+      "originPort": "Algiers",
+      "destinationPort": "Alofi",
+      "etd": "2026-06-04T08:00:00.000Z",
+      "eta": "2026-06-19T08:00:00.000Z",
+      "cutoffDate": "2026-06-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0007",
+      "vesselName": "Capital Carrier 07",
+      "voyageNumber": "CC-2026-0007",
+      "originPort": "Alofi",
+      "destinationPort": "Amman",
+      "etd": "2026-06-07T08:00:00.000Z",
+      "eta": "2026-06-23T08:00:00.000Z",
+      "cutoffDate": "2026-06-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0008",
+      "vesselName": "Capital Carrier 08",
+      "voyageNumber": "CC-2026-0008",
+      "originPort": "Amman",
+      "destinationPort": "Amsterdam",
+      "etd": "2026-06-10T08:00:00.000Z",
+      "eta": "2026-06-27T08:00:00.000Z",
+      "cutoffDate": "2026-06-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0009",
+      "vesselName": "Capital Carrier 09",
+      "voyageNumber": "CC-2026-0009",
+      "originPort": "Amsterdam",
+      "destinationPort": "Andorra la Vella",
+      "etd": "2026-06-13T08:00:00.000Z",
+      "eta": "2026-07-01T08:00:00.000Z",
+      "cutoffDate": "2026-06-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0010",
+      "vesselName": "Capital Carrier 10",
+      "voyageNumber": "CC-2026-0010",
+      "originPort": "Andorra la Vella",
+      "destinationPort": "Ankara",
+      "etd": "2026-06-16T08:00:00.000Z",
+      "eta": "2026-07-05T08:00:00.000Z",
+      "cutoffDate": "2026-06-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0011",
+      "vesselName": "Capital Carrier 11",
+      "voyageNumber": "CC-2026-0011",
+      "originPort": "Ankara",
+      "destinationPort": "Antananarivo",
+      "etd": "2026-06-19T08:00:00.000Z",
+      "eta": "2026-07-09T08:00:00.000Z",
+      "cutoffDate": "2026-06-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0012",
+      "vesselName": "Capital Carrier 12",
+      "voyageNumber": "CC-2026-0012",
+      "originPort": "Antananarivo",
+      "destinationPort": "Apia",
+      "etd": "2026-06-22T08:00:00.000Z",
+      "eta": "2026-07-13T08:00:00.000Z",
+      "cutoffDate": "2026-06-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0013",
+      "vesselName": "Capital Carrier 13",
+      "voyageNumber": "CC-2026-0013",
+      "originPort": "Apia",
+      "destinationPort": "Ashgabat",
+      "etd": "2026-06-25T08:00:00.000Z",
+      "eta": "2026-07-17T08:00:00.000Z",
+      "cutoffDate": "2026-06-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0014",
+      "vesselName": "Capital Carrier 14",
+      "voyageNumber": "CC-2026-0014",
+      "originPort": "Ashgabat",
+      "destinationPort": "Asmara",
+      "etd": "2026-06-28T08:00:00.000Z",
+      "eta": "2026-07-21T08:00:00.000Z",
+      "cutoffDate": "2026-06-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0015",
+      "vesselName": "Capital Carrier 15",
+      "voyageNumber": "CC-2026-0015",
+      "originPort": "Asmara",
+      "destinationPort": "Astana",
+      "etd": "2026-07-01T08:00:00.000Z",
+      "eta": "2026-07-25T08:00:00.000Z",
+      "cutoffDate": "2026-06-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0016",
+      "vesselName": "Capital Carrier 16",
+      "voyageNumber": "CC-2026-0016",
+      "originPort": "Astana",
+      "destinationPort": "Asunción",
+      "etd": "2026-07-04T08:00:00.000Z",
+      "eta": "2026-07-14T08:00:00.000Z",
+      "cutoffDate": "2026-07-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0017",
+      "vesselName": "Capital Carrier 17",
+      "voyageNumber": "CC-2026-0017",
+      "originPort": "Asunción",
+      "destinationPort": "Athens",
+      "etd": "2026-07-07T08:00:00.000Z",
+      "eta": "2026-07-18T08:00:00.000Z",
+      "cutoffDate": "2026-07-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0018",
+      "vesselName": "Capital Carrier 18",
+      "voyageNumber": "CC-2026-0018",
+      "originPort": "Athens",
+      "destinationPort": "Avarua",
+      "etd": "2026-07-10T08:00:00.000Z",
+      "eta": "2026-07-22T08:00:00.000Z",
+      "cutoffDate": "2026-07-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0019",
+      "vesselName": "Capital Carrier 19",
+      "voyageNumber": "CC-2026-0019",
+      "originPort": "Avarua",
+      "destinationPort": "Baghdad",
+      "etd": "2026-07-13T08:00:00.000Z",
+      "eta": "2026-07-26T08:00:00.000Z",
+      "cutoffDate": "2026-07-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0020",
+      "vesselName": "Capital Carrier 20",
+      "voyageNumber": "CC-2026-0020",
+      "originPort": "Baghdad",
+      "destinationPort": "Baku",
+      "etd": "2026-07-16T08:00:00.000Z",
+      "eta": "2026-07-30T08:00:00.000Z",
+      "cutoffDate": "2026-07-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0021",
+      "vesselName": "Capital Carrier 21",
+      "voyageNumber": "CC-2026-0021",
+      "originPort": "Baku",
+      "destinationPort": "Bamako",
+      "etd": "2026-07-19T08:00:00.000Z",
+      "eta": "2026-08-03T08:00:00.000Z",
+      "cutoffDate": "2026-07-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0022",
+      "vesselName": "Capital Carrier 22",
+      "voyageNumber": "CC-2026-0022",
+      "originPort": "Bamako",
+      "destinationPort": "Bandar Seri Begawan",
+      "etd": "2026-07-22T08:00:00.000Z",
+      "eta": "2026-08-07T08:00:00.000Z",
+      "cutoffDate": "2026-07-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0023",
+      "vesselName": "Capital Carrier 23",
+      "voyageNumber": "CC-2026-0023",
+      "originPort": "Bandar Seri Begawan",
+      "destinationPort": "Bangkok",
+      "etd": "2026-07-25T08:00:00.000Z",
+      "eta": "2026-08-11T08:00:00.000Z",
+      "cutoffDate": "2026-07-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0024",
+      "vesselName": "Capital Carrier 24",
+      "voyageNumber": "CC-2026-0024",
+      "originPort": "Bangkok",
+      "destinationPort": "Bangui",
+      "etd": "2026-07-28T08:00:00.000Z",
+      "eta": "2026-08-15T08:00:00.000Z",
+      "cutoffDate": "2026-07-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0025",
+      "vesselName": "Capital Carrier 25",
+      "voyageNumber": "CC-2026-0025",
+      "originPort": "Bangui",
+      "destinationPort": "Banjul",
+      "etd": "2026-07-31T08:00:00.000Z",
+      "eta": "2026-08-19T08:00:00.000Z",
+      "cutoffDate": "2026-07-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0026",
+      "vesselName": "Capital Carrier 26",
+      "voyageNumber": "CC-2026-0026",
+      "originPort": "Banjul",
+      "destinationPort": "Basse-Terre",
+      "etd": "2026-08-03T08:00:00.000Z",
+      "eta": "2026-08-23T08:00:00.000Z",
+      "cutoffDate": "2026-08-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0027",
+      "vesselName": "Capital Carrier 27",
+      "voyageNumber": "CC-2026-0027",
+      "originPort": "Basse-Terre",
+      "destinationPort": "Basseterre",
+      "etd": "2026-08-06T08:00:00.000Z",
+      "eta": "2026-08-27T08:00:00.000Z",
+      "cutoffDate": "2026-08-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0028",
+      "vesselName": "Capital Carrier 28",
+      "voyageNumber": "CC-2026-0028",
+      "originPort": "Basseterre",
+      "destinationPort": "Beijing",
+      "etd": "2026-08-09T08:00:00.000Z",
+      "eta": "2026-08-31T08:00:00.000Z",
+      "cutoffDate": "2026-08-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0029",
+      "vesselName": "Capital Carrier 29",
+      "voyageNumber": "CC-2026-0029",
+      "originPort": "Beijing",
+      "destinationPort": "Beirut",
+      "etd": "2026-08-12T08:00:00.000Z",
+      "eta": "2026-09-04T08:00:00.000Z",
+      "cutoffDate": "2026-08-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0030",
+      "vesselName": "Capital Carrier 30",
+      "voyageNumber": "CC-2026-0030",
+      "originPort": "Beirut",
+      "destinationPort": "Belgrade",
+      "etd": "2026-08-15T08:00:00.000Z",
+      "eta": "2026-09-08T08:00:00.000Z",
+      "cutoffDate": "2026-08-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0031",
+      "vesselName": "Capital Carrier 31",
+      "voyageNumber": "CC-2026-0031",
+      "originPort": "Belgrade",
+      "destinationPort": "Belmopan",
+      "etd": "2026-08-18T08:00:00.000Z",
+      "eta": "2026-08-28T08:00:00.000Z",
+      "cutoffDate": "2026-08-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0032",
+      "vesselName": "Capital Carrier 32",
+      "voyageNumber": "CC-2026-0032",
+      "originPort": "Belmopan",
+      "destinationPort": "Berlin",
+      "etd": "2026-08-21T08:00:00.000Z",
+      "eta": "2026-09-01T08:00:00.000Z",
+      "cutoffDate": "2026-08-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0033",
+      "vesselName": "Capital Carrier 33",
+      "voyageNumber": "CC-2026-0033",
+      "originPort": "Berlin",
+      "destinationPort": "Bern",
+      "etd": "2026-08-24T08:00:00.000Z",
+      "eta": "2026-09-05T08:00:00.000Z",
+      "cutoffDate": "2026-08-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0034",
+      "vesselName": "Capital Carrier 34",
+      "voyageNumber": "CC-2026-0034",
+      "originPort": "Bern",
+      "destinationPort": "Bishkek",
+      "etd": "2026-08-27T08:00:00.000Z",
+      "eta": "2026-09-09T08:00:00.000Z",
+      "cutoffDate": "2026-08-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0035",
+      "vesselName": "Capital Carrier 35",
+      "voyageNumber": "CC-2026-0035",
+      "originPort": "Bishkek",
+      "destinationPort": "Bissau",
+      "etd": "2026-08-30T08:00:00.000Z",
+      "eta": "2026-09-13T08:00:00.000Z",
+      "cutoffDate": "2026-08-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0036",
+      "vesselName": "Capital Carrier 36",
+      "voyageNumber": "CC-2026-0036",
+      "originPort": "Bissau",
+      "destinationPort": "Bloemfontein",
+      "etd": "2026-09-02T08:00:00.000Z",
+      "eta": "2026-09-17T08:00:00.000Z",
+      "cutoffDate": "2026-08-31T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0037",
+      "vesselName": "Capital Carrier 37",
+      "voyageNumber": "CC-2026-0037",
+      "originPort": "Bloemfontein",
+      "destinationPort": "Bogotá",
+      "etd": "2026-09-05T08:00:00.000Z",
+      "eta": "2026-09-21T08:00:00.000Z",
+      "cutoffDate": "2026-09-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0038",
+      "vesselName": "Capital Carrier 38",
+      "voyageNumber": "CC-2026-0038",
+      "originPort": "Bogotá",
+      "destinationPort": "Brasília",
+      "etd": "2026-09-08T08:00:00.000Z",
+      "eta": "2026-09-25T08:00:00.000Z",
+      "cutoffDate": "2026-09-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0039",
+      "vesselName": "Capital Carrier 39",
+      "voyageNumber": "CC-2026-0039",
+      "originPort": "Brasília",
+      "destinationPort": "Bratislava",
+      "etd": "2026-09-11T08:00:00.000Z",
+      "eta": "2026-09-29T08:00:00.000Z",
+      "cutoffDate": "2026-09-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0040",
+      "vesselName": "Capital Carrier 40",
+      "voyageNumber": "CC-2026-0040",
+      "originPort": "Bratislava",
+      "destinationPort": "Brazzaville",
+      "etd": "2026-09-14T08:00:00.000Z",
+      "eta": "2026-10-03T08:00:00.000Z",
+      "cutoffDate": "2026-09-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0041",
+      "vesselName": "Capital Carrier 41",
+      "voyageNumber": "CC-2026-0041",
+      "originPort": "Brazzaville",
+      "destinationPort": "Bridgetown",
+      "etd": "2026-09-17T08:00:00.000Z",
+      "eta": "2026-10-07T08:00:00.000Z",
+      "cutoffDate": "2026-09-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0042",
+      "vesselName": "Capital Carrier 42",
+      "voyageNumber": "CC-2026-0042",
+      "originPort": "Bridgetown",
+      "destinationPort": "Brussels",
+      "etd": "2026-09-20T08:00:00.000Z",
+      "eta": "2026-10-11T08:00:00.000Z",
+      "cutoffDate": "2026-09-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0043",
+      "vesselName": "Capital Carrier 43",
+      "voyageNumber": "CC-2026-0043",
+      "originPort": "Brussels",
+      "destinationPort": "Bucharest",
+      "etd": "2026-09-23T08:00:00.000Z",
+      "eta": "2026-10-15T08:00:00.000Z",
+      "cutoffDate": "2026-09-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0044",
+      "vesselName": "Capital Carrier 44",
+      "voyageNumber": "CC-2026-0044",
+      "originPort": "Bucharest",
+      "destinationPort": "Budapest",
+      "etd": "2026-09-26T08:00:00.000Z",
+      "eta": "2026-10-19T08:00:00.000Z",
+      "cutoffDate": "2026-09-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0045",
+      "vesselName": "Capital Carrier 45",
+      "voyageNumber": "CC-2026-0045",
+      "originPort": "Budapest",
+      "destinationPort": "Buenos Aires",
+      "etd": "2026-09-29T08:00:00.000Z",
+      "eta": "2026-10-23T08:00:00.000Z",
+      "cutoffDate": "2026-09-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0046",
+      "vesselName": "Capital Carrier 46",
+      "voyageNumber": "CC-2026-0046",
+      "originPort": "Buenos Aires",
+      "destinationPort": "Cairo",
+      "etd": "2026-10-02T08:00:00.000Z",
+      "eta": "2026-10-12T08:00:00.000Z",
+      "cutoffDate": "2026-09-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0047",
+      "vesselName": "Capital Carrier 47",
+      "voyageNumber": "CC-2026-0047",
+      "originPort": "Cairo",
+      "destinationPort": "Canberra",
+      "etd": "2026-10-05T08:00:00.000Z",
+      "eta": "2026-10-16T08:00:00.000Z",
+      "cutoffDate": "2026-10-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0048",
+      "vesselName": "Capital Carrier 48",
+      "voyageNumber": "CC-2026-0048",
+      "originPort": "Canberra",
+      "destinationPort": "Cape Town",
+      "etd": "2026-10-08T08:00:00.000Z",
+      "eta": "2026-10-20T08:00:00.000Z",
+      "cutoffDate": "2026-10-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0049",
+      "vesselName": "Capital Carrier 49",
+      "voyageNumber": "CC-2026-0049",
+      "originPort": "Cape Town",
+      "destinationPort": "Caracas",
+      "etd": "2026-10-11T08:00:00.000Z",
+      "eta": "2026-10-24T08:00:00.000Z",
+      "cutoffDate": "2026-10-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0050",
+      "vesselName": "Capital Carrier 50",
+      "voyageNumber": "CC-2026-0050",
+      "originPort": "Caracas",
+      "destinationPort": "Castries",
+      "etd": "2026-10-14T08:00:00.000Z",
+      "eta": "2026-10-28T08:00:00.000Z",
+      "cutoffDate": "2026-10-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0051",
+      "vesselName": "Capital Carrier 01",
+      "voyageNumber": "CC-2026-0051",
+      "originPort": "Castries",
+      "destinationPort": "Cayenne",
+      "etd": "2026-10-17T08:00:00.000Z",
+      "eta": "2026-11-01T08:00:00.000Z",
+      "cutoffDate": "2026-10-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0052",
+      "vesselName": "Capital Carrier 02",
+      "voyageNumber": "CC-2026-0052",
+      "originPort": "Cayenne",
+      "destinationPort": "Charlotte Amalie",
+      "etd": "2026-10-20T08:00:00.000Z",
+      "eta": "2026-11-05T08:00:00.000Z",
+      "cutoffDate": "2026-10-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0053",
+      "vesselName": "Capital Carrier 03",
+      "voyageNumber": "CC-2026-0053",
+      "originPort": "Charlotte Amalie",
+      "destinationPort": "Chișinău",
+      "etd": "2026-10-23T08:00:00.000Z",
+      "eta": "2026-11-09T08:00:00.000Z",
+      "cutoffDate": "2026-10-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0054",
+      "vesselName": "Capital Carrier 04",
+      "voyageNumber": "CC-2026-0054",
+      "originPort": "Chișinău",
+      "destinationPort": "City of San Marino",
+      "etd": "2026-10-26T08:00:00.000Z",
+      "eta": "2026-11-13T08:00:00.000Z",
+      "cutoffDate": "2026-10-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0055",
+      "vesselName": "Capital Carrier 05",
+      "voyageNumber": "CC-2026-0055",
+      "originPort": "City of San Marino",
+      "destinationPort": "City of Victoria",
+      "etd": "2026-10-29T08:00:00.000Z",
+      "eta": "2026-11-17T08:00:00.000Z",
+      "cutoffDate": "2026-10-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0056",
+      "vesselName": "Capital Carrier 06",
+      "voyageNumber": "CC-2026-0056",
+      "originPort": "City of Victoria",
+      "destinationPort": "Ciudad de la Paz",
+      "etd": "2026-11-01T08:00:00.000Z",
+      "eta": "2026-11-21T08:00:00.000Z",
+      "cutoffDate": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0057",
+      "vesselName": "Capital Carrier 07",
+      "voyageNumber": "CC-2026-0057",
+      "originPort": "Ciudad de la Paz",
+      "destinationPort": "Cockburn Town",
+      "etd": "2026-11-04T08:00:00.000Z",
+      "eta": "2026-11-25T08:00:00.000Z",
+      "cutoffDate": "2026-11-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0058",
+      "vesselName": "Capital Carrier 08",
+      "voyageNumber": "CC-2026-0058",
+      "originPort": "Cockburn Town",
+      "destinationPort": "Conakry",
+      "etd": "2026-11-07T08:00:00.000Z",
+      "eta": "2026-11-29T08:00:00.000Z",
+      "cutoffDate": "2026-11-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0059",
+      "vesselName": "Capital Carrier 09",
+      "voyageNumber": "CC-2026-0059",
+      "originPort": "Conakry",
+      "destinationPort": "Copenhagen",
+      "etd": "2026-11-10T08:00:00.000Z",
+      "eta": "2026-12-03T08:00:00.000Z",
+      "cutoffDate": "2026-11-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0060",
+      "vesselName": "Capital Carrier 10",
+      "voyageNumber": "CC-2026-0060",
+      "originPort": "Copenhagen",
+      "destinationPort": "Dakar",
+      "etd": "2026-11-13T08:00:00.000Z",
+      "eta": "2026-12-07T08:00:00.000Z",
+      "cutoffDate": "2026-11-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0061",
+      "vesselName": "Capital Carrier 11",
+      "voyageNumber": "CC-2026-0061",
+      "originPort": "Dakar",
+      "destinationPort": "Damascus",
+      "etd": "2026-11-16T08:00:00.000Z",
+      "eta": "2026-11-26T08:00:00.000Z",
+      "cutoffDate": "2026-11-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0062",
+      "vesselName": "Capital Carrier 12",
+      "voyageNumber": "CC-2026-0062",
+      "originPort": "Damascus",
+      "destinationPort": "Dhaka",
+      "etd": "2026-11-19T08:00:00.000Z",
+      "eta": "2026-11-30T08:00:00.000Z",
+      "cutoffDate": "2026-11-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0063",
+      "vesselName": "Capital Carrier 13",
+      "voyageNumber": "CC-2026-0063",
+      "originPort": "Dhaka",
+      "destinationPort": "Diego Garcia",
+      "etd": "2026-11-22T08:00:00.000Z",
+      "eta": "2026-12-04T08:00:00.000Z",
+      "cutoffDate": "2026-11-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0064",
+      "vesselName": "Capital Carrier 14",
+      "voyageNumber": "CC-2026-0064",
+      "originPort": "Diego Garcia",
+      "destinationPort": "Dili",
+      "etd": "2026-11-25T08:00:00.000Z",
+      "eta": "2026-12-08T08:00:00.000Z",
+      "cutoffDate": "2026-11-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0065",
+      "vesselName": "Capital Carrier 15",
+      "voyageNumber": "CC-2026-0065",
+      "originPort": "Dili",
+      "destinationPort": "Djibouti",
+      "etd": "2026-11-28T08:00:00.000Z",
+      "eta": "2026-12-12T08:00:00.000Z",
+      "cutoffDate": "2026-11-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0066",
+      "vesselName": "Capital Carrier 16",
+      "voyageNumber": "CC-2026-0066",
+      "originPort": "Djibouti",
+      "destinationPort": "Dodoma",
+      "etd": "2026-12-01T08:00:00.000Z",
+      "eta": "2026-12-16T08:00:00.000Z",
+      "cutoffDate": "2026-11-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0067",
+      "vesselName": "Capital Carrier 17",
+      "voyageNumber": "CC-2026-0067",
+      "originPort": "Dodoma",
+      "destinationPort": "Doha",
+      "etd": "2026-12-04T08:00:00.000Z",
+      "eta": "2026-12-20T08:00:00.000Z",
+      "cutoffDate": "2026-12-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0068",
+      "vesselName": "Capital Carrier 18",
+      "voyageNumber": "CC-2026-0068",
+      "originPort": "Doha",
+      "destinationPort": "Douglas",
+      "etd": "2026-12-07T08:00:00.000Z",
+      "eta": "2026-12-24T08:00:00.000Z",
+      "cutoffDate": "2026-12-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0069",
+      "vesselName": "Capital Carrier 19",
+      "voyageNumber": "CC-2026-0069",
+      "originPort": "Douglas",
+      "destinationPort": "Dublin",
+      "etd": "2026-12-10T08:00:00.000Z",
+      "eta": "2026-12-28T08:00:00.000Z",
+      "cutoffDate": "2026-12-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0070",
+      "vesselName": "Capital Carrier 20",
+      "voyageNumber": "CC-2026-0070",
+      "originPort": "Dublin",
+      "destinationPort": "Dushanbe",
+      "etd": "2026-12-13T08:00:00.000Z",
+      "eta": "2027-01-01T08:00:00.000Z",
+      "cutoffDate": "2026-12-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0071",
+      "vesselName": "Capital Carrier 21",
+      "voyageNumber": "CC-2026-0071",
+      "originPort": "Dushanbe",
+      "destinationPort": "El Aaiún",
+      "etd": "2026-12-16T08:00:00.000Z",
+      "eta": "2027-01-05T08:00:00.000Z",
+      "cutoffDate": "2026-12-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0072",
+      "vesselName": "Capital Carrier 22",
+      "voyageNumber": "CC-2026-0072",
+      "originPort": "El Aaiún",
+      "destinationPort": "Fakaofo",
+      "etd": "2026-12-19T08:00:00.000Z",
+      "eta": "2027-01-09T08:00:00.000Z",
+      "cutoffDate": "2026-12-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0073",
+      "vesselName": "Capital Carrier 23",
+      "voyageNumber": "CC-2026-0073",
+      "originPort": "Fakaofo",
+      "destinationPort": "Flying Fish Cove",
+      "etd": "2026-12-22T08:00:00.000Z",
+      "eta": "2027-01-13T08:00:00.000Z",
+      "cutoffDate": "2026-12-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0074",
+      "vesselName": "Capital Carrier 24",
+      "voyageNumber": "CC-2026-0074",
+      "originPort": "Flying Fish Cove",
+      "destinationPort": "Fort-de-France",
+      "etd": "2026-12-25T08:00:00.000Z",
+      "eta": "2027-01-17T08:00:00.000Z",
+      "cutoffDate": "2026-12-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0075",
+      "vesselName": "Capital Carrier 25",
+      "voyageNumber": "CC-2026-0075",
+      "originPort": "Fort-de-France",
+      "destinationPort": "Freetown",
+      "etd": "2026-12-28T08:00:00.000Z",
+      "eta": "2027-01-21T08:00:00.000Z",
+      "cutoffDate": "2026-12-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0076",
+      "vesselName": "Capital Carrier 26",
+      "voyageNumber": "CC-2026-0076",
+      "originPort": "Freetown",
+      "destinationPort": "Funafuti",
+      "etd": "2026-12-31T08:00:00.000Z",
+      "eta": "2027-01-10T08:00:00.000Z",
+      "cutoffDate": "2026-12-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0077",
+      "vesselName": "Capital Carrier 27",
+      "voyageNumber": "CC-2027-0077",
+      "originPort": "Funafuti",
+      "destinationPort": "Gaborone",
+      "etd": "2027-01-03T08:00:00.000Z",
+      "eta": "2027-01-14T08:00:00.000Z",
+      "cutoffDate": "2027-01-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0078",
+      "vesselName": "Capital Carrier 28",
+      "voyageNumber": "CC-2027-0078",
+      "originPort": "Gaborone",
+      "destinationPort": "George Town",
+      "etd": "2027-01-06T08:00:00.000Z",
+      "eta": "2027-01-18T08:00:00.000Z",
+      "cutoffDate": "2027-01-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0079",
+      "vesselName": "Capital Carrier 29",
+      "voyageNumber": "CC-2027-0079",
+      "originPort": "George Town",
+      "destinationPort": "Georgetown",
+      "etd": "2027-01-09T08:00:00.000Z",
+      "eta": "2027-01-22T08:00:00.000Z",
+      "cutoffDate": "2027-01-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0080",
+      "vesselName": "Capital Carrier 30",
+      "voyageNumber": "CC-2027-0080",
+      "originPort": "Georgetown",
+      "destinationPort": "Gibraltar",
+      "etd": "2027-01-12T08:00:00.000Z",
+      "eta": "2027-01-26T08:00:00.000Z",
+      "cutoffDate": "2027-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0081",
+      "vesselName": "Capital Carrier 31",
+      "voyageNumber": "CC-2027-0081",
+      "originPort": "Gibraltar",
+      "destinationPort": "Gitega",
+      "etd": "2027-01-15T08:00:00.000Z",
+      "eta": "2027-01-30T08:00:00.000Z",
+      "cutoffDate": "2027-01-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0082",
+      "vesselName": "Capital Carrier 32",
+      "voyageNumber": "CC-2027-0082",
+      "originPort": "Gitega",
+      "destinationPort": "Guatemala City",
+      "etd": "2027-01-18T08:00:00.000Z",
+      "eta": "2027-02-03T08:00:00.000Z",
+      "cutoffDate": "2027-01-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0083",
+      "vesselName": "Capital Carrier 33",
+      "voyageNumber": "CC-2027-0083",
+      "originPort": "Guatemala City",
+      "destinationPort": "Gustavia",
+      "etd": "2027-01-21T08:00:00.000Z",
+      "eta": "2027-02-07T08:00:00.000Z",
+      "cutoffDate": "2027-01-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0084",
+      "vesselName": "Capital Carrier 34",
+      "voyageNumber": "CC-2027-0084",
+      "originPort": "Gustavia",
+      "destinationPort": "Hagåtña",
+      "etd": "2027-01-24T08:00:00.000Z",
+      "eta": "2027-02-11T08:00:00.000Z",
+      "cutoffDate": "2027-01-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0085",
+      "vesselName": "Capital Carrier 35",
+      "voyageNumber": "CC-2027-0085",
+      "originPort": "Hagåtña",
+      "destinationPort": "Hamilton",
+      "etd": "2027-01-27T08:00:00.000Z",
+      "eta": "2027-02-15T08:00:00.000Z",
+      "cutoffDate": "2027-01-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0086",
+      "vesselName": "Capital Carrier 36",
+      "voyageNumber": "CC-2027-0086",
+      "originPort": "Hamilton",
+      "destinationPort": "Hanoi",
+      "etd": "2027-01-30T08:00:00.000Z",
+      "eta": "2027-02-19T08:00:00.000Z",
+      "cutoffDate": "2027-01-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0087",
+      "vesselName": "Capital Carrier 37",
+      "voyageNumber": "CC-2027-0087",
+      "originPort": "Hanoi",
+      "destinationPort": "Harare",
+      "etd": "2027-02-02T08:00:00.000Z",
+      "eta": "2027-02-23T08:00:00.000Z",
+      "cutoffDate": "2027-01-31T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0088",
+      "vesselName": "Capital Carrier 38",
+      "voyageNumber": "CC-2027-0088",
+      "originPort": "Harare",
+      "destinationPort": "Havana",
+      "etd": "2027-02-05T08:00:00.000Z",
+      "eta": "2027-02-27T08:00:00.000Z",
+      "cutoffDate": "2027-02-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0089",
+      "vesselName": "Capital Carrier 39",
+      "voyageNumber": "CC-2027-0089",
+      "originPort": "Havana",
+      "destinationPort": "Helsinki",
+      "etd": "2027-02-08T08:00:00.000Z",
+      "eta": "2027-03-03T08:00:00.000Z",
+      "cutoffDate": "2027-02-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0090",
+      "vesselName": "Capital Carrier 40",
+      "voyageNumber": "CC-2027-0090",
+      "originPort": "Helsinki",
+      "destinationPort": "Honiara",
+      "etd": "2027-02-11T08:00:00.000Z",
+      "eta": "2027-03-07T08:00:00.000Z",
+      "cutoffDate": "2027-02-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0091",
+      "vesselName": "Capital Carrier 41",
+      "voyageNumber": "CC-2027-0091",
+      "originPort": "Honiara",
+      "destinationPort": "Islamabad",
+      "etd": "2027-02-14T08:00:00.000Z",
+      "eta": "2027-02-24T08:00:00.000Z",
+      "cutoffDate": "2027-02-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0092",
+      "vesselName": "Capital Carrier 42",
+      "voyageNumber": "CC-2027-0092",
+      "originPort": "Islamabad",
+      "destinationPort": "Jakarta",
+      "etd": "2027-02-17T08:00:00.000Z",
+      "eta": "2027-02-28T08:00:00.000Z",
+      "cutoffDate": "2027-02-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0093",
+      "vesselName": "Capital Carrier 43",
+      "voyageNumber": "CC-2027-0093",
+      "originPort": "Jakarta",
+      "destinationPort": "Jamestown",
+      "etd": "2027-02-20T08:00:00.000Z",
+      "eta": "2027-03-04T08:00:00.000Z",
+      "cutoffDate": "2027-02-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0094",
+      "vesselName": "Capital Carrier 44",
+      "voyageNumber": "CC-2027-0094",
+      "originPort": "Jamestown",
+      "destinationPort": "Jerusalem",
+      "etd": "2027-02-23T08:00:00.000Z",
+      "eta": "2027-03-08T08:00:00.000Z",
+      "cutoffDate": "2027-02-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0095",
+      "vesselName": "Capital Carrier 45",
+      "voyageNumber": "CC-2027-0095",
+      "originPort": "Jerusalem",
+      "destinationPort": "Juba",
+      "etd": "2027-02-26T08:00:00.000Z",
+      "eta": "2027-03-12T08:00:00.000Z",
+      "cutoffDate": "2027-02-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0096",
+      "vesselName": "Capital Carrier 46",
+      "voyageNumber": "CC-2027-0096",
+      "originPort": "Juba",
+      "destinationPort": "Kabul",
+      "etd": "2027-03-01T08:00:00.000Z",
+      "eta": "2027-03-16T08:00:00.000Z",
+      "cutoffDate": "2027-02-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0097",
+      "vesselName": "Capital Carrier 47",
+      "voyageNumber": "CC-2027-0097",
+      "originPort": "Kabul",
+      "destinationPort": "Kampala",
+      "etd": "2027-03-04T08:00:00.000Z",
+      "eta": "2027-03-20T08:00:00.000Z",
+      "cutoffDate": "2027-03-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0098",
+      "vesselName": "Capital Carrier 48",
+      "voyageNumber": "CC-2027-0098",
+      "originPort": "Kampala",
+      "destinationPort": "Kathmandu",
+      "etd": "2027-03-07T08:00:00.000Z",
+      "eta": "2027-03-24T08:00:00.000Z",
+      "cutoffDate": "2027-03-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0099",
+      "vesselName": "Capital Carrier 49",
+      "voyageNumber": "CC-2027-0099",
+      "originPort": "Kathmandu",
+      "destinationPort": "Khartoum",
+      "etd": "2027-03-10T08:00:00.000Z",
+      "eta": "2027-03-28T08:00:00.000Z",
+      "cutoffDate": "2027-03-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0100",
+      "vesselName": "Capital Carrier 50",
+      "voyageNumber": "CC-2027-0100",
+      "originPort": "Khartoum",
+      "destinationPort": "Kigali",
+      "etd": "2027-03-13T08:00:00.000Z",
+      "eta": "2027-04-01T08:00:00.000Z",
+      "cutoffDate": "2027-03-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0101",
+      "vesselName": "Capital Carrier 01",
+      "voyageNumber": "CC-2027-0101",
+      "originPort": "Kigali",
+      "destinationPort": "King Edward Point",
+      "etd": "2027-03-16T08:00:00.000Z",
+      "eta": "2027-04-05T08:00:00.000Z",
+      "cutoffDate": "2027-03-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0102",
+      "vesselName": "Capital Carrier 02",
+      "voyageNumber": "CC-2027-0102",
+      "originPort": "King Edward Point",
+      "destinationPort": "Kingston",
+      "etd": "2027-03-19T08:00:00.000Z",
+      "eta": "2027-04-09T08:00:00.000Z",
+      "cutoffDate": "2027-03-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0103",
+      "vesselName": "Capital Carrier 03",
+      "voyageNumber": "CC-2027-0103",
+      "originPort": "Kingston",
+      "destinationPort": "Kingstown",
+      "etd": "2027-03-22T08:00:00.000Z",
+      "eta": "2027-04-13T08:00:00.000Z",
+      "cutoffDate": "2027-03-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0104",
+      "vesselName": "Capital Carrier 04",
+      "voyageNumber": "CC-2027-0104",
+      "originPort": "Kingstown",
+      "destinationPort": "Kinshasa",
+      "etd": "2027-03-25T08:00:00.000Z",
+      "eta": "2027-04-17T08:00:00.000Z",
+      "cutoffDate": "2027-03-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0105",
+      "vesselName": "Capital Carrier 05",
+      "voyageNumber": "CC-2027-0105",
+      "originPort": "Kinshasa",
+      "destinationPort": "Kralendijk",
+      "etd": "2027-03-28T08:00:00.000Z",
+      "eta": "2027-04-21T08:00:00.000Z",
+      "cutoffDate": "2027-03-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0106",
+      "vesselName": "Capital Carrier 06",
+      "voyageNumber": "CC-2027-0106",
+      "originPort": "Kralendijk",
+      "destinationPort": "Kuala Lumpur",
+      "etd": "2027-03-31T08:00:00.000Z",
+      "eta": "2027-04-10T08:00:00.000Z",
+      "cutoffDate": "2027-03-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0107",
+      "vesselName": "Capital Carrier 07",
+      "voyageNumber": "CC-2027-0107",
+      "originPort": "Kuala Lumpur",
+      "destinationPort": "Kuwait City",
+      "etd": "2027-04-03T08:00:00.000Z",
+      "eta": "2027-04-14T08:00:00.000Z",
+      "cutoffDate": "2027-04-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0108",
+      "vesselName": "Capital Carrier 08",
+      "voyageNumber": "CC-2027-0108",
+      "originPort": "Kuwait City",
+      "destinationPort": "Kyiv",
+      "etd": "2027-04-06T08:00:00.000Z",
+      "eta": "2027-04-18T08:00:00.000Z",
+      "cutoffDate": "2027-04-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0109",
+      "vesselName": "Capital Carrier 09",
+      "voyageNumber": "CC-2027-0109",
+      "originPort": "Kyiv",
+      "destinationPort": "Libreville",
+      "etd": "2027-04-09T08:00:00.000Z",
+      "eta": "2027-04-22T08:00:00.000Z",
+      "cutoffDate": "2027-04-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0110",
+      "vesselName": "Capital Carrier 10",
+      "voyageNumber": "CC-2027-0110",
+      "originPort": "Libreville",
+      "destinationPort": "Lilongwe",
+      "etd": "2027-04-12T08:00:00.000Z",
+      "eta": "2027-04-26T08:00:00.000Z",
+      "cutoffDate": "2027-04-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0111",
+      "vesselName": "Capital Carrier 11",
+      "voyageNumber": "CC-2027-0111",
+      "originPort": "Lilongwe",
+      "destinationPort": "Lima",
+      "etd": "2027-04-15T08:00:00.000Z",
+      "eta": "2027-04-30T08:00:00.000Z",
+      "cutoffDate": "2027-04-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0112",
+      "vesselName": "Capital Carrier 12",
+      "voyageNumber": "CC-2027-0112",
+      "originPort": "Lima",
+      "destinationPort": "Lisbon",
+      "etd": "2027-04-18T08:00:00.000Z",
+      "eta": "2027-05-04T08:00:00.000Z",
+      "cutoffDate": "2027-04-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0113",
+      "vesselName": "Capital Carrier 13",
+      "voyageNumber": "CC-2027-0113",
+      "originPort": "Lisbon",
+      "destinationPort": "Ljubljana",
+      "etd": "2027-04-21T08:00:00.000Z",
+      "eta": "2027-05-08T08:00:00.000Z",
+      "cutoffDate": "2027-04-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0114",
+      "vesselName": "Capital Carrier 14",
+      "voyageNumber": "CC-2027-0114",
+      "originPort": "Ljubljana",
+      "destinationPort": "Lomé",
+      "etd": "2027-04-24T08:00:00.000Z",
+      "eta": "2027-05-12T08:00:00.000Z",
+      "cutoffDate": "2027-04-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0115",
+      "vesselName": "Capital Carrier 15",
+      "voyageNumber": "CC-2027-0115",
+      "originPort": "Lomé",
+      "destinationPort": "London",
+      "etd": "2027-04-27T08:00:00.000Z",
+      "eta": "2027-05-16T08:00:00.000Z",
+      "cutoffDate": "2027-04-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0116",
+      "vesselName": "Capital Carrier 16",
+      "voyageNumber": "CC-2027-0116",
+      "originPort": "London",
+      "destinationPort": "Longyearbyen",
+      "etd": "2027-04-30T08:00:00.000Z",
+      "eta": "2027-05-20T08:00:00.000Z",
+      "cutoffDate": "2027-04-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0117",
+      "vesselName": "Capital Carrier 17",
+      "voyageNumber": "CC-2027-0117",
+      "originPort": "Longyearbyen",
+      "destinationPort": "Luanda",
+      "etd": "2027-05-03T08:00:00.000Z",
+      "eta": "2027-05-24T08:00:00.000Z",
+      "cutoffDate": "2027-05-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0118",
+      "vesselName": "Capital Carrier 18",
+      "voyageNumber": "CC-2027-0118",
+      "originPort": "Luanda",
+      "destinationPort": "Lusaka",
+      "etd": "2027-05-06T08:00:00.000Z",
+      "eta": "2027-05-28T08:00:00.000Z",
+      "cutoffDate": "2027-05-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0119",
+      "vesselName": "Capital Carrier 19",
+      "voyageNumber": "CC-2027-0119",
+      "originPort": "Lusaka",
+      "destinationPort": "Luxembourg",
+      "etd": "2027-05-09T08:00:00.000Z",
+      "eta": "2027-06-01T08:00:00.000Z",
+      "cutoffDate": "2027-05-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0120",
+      "vesselName": "Capital Carrier 20",
+      "voyageNumber": "CC-2027-0120",
+      "originPort": "Luxembourg",
+      "destinationPort": "Madrid",
+      "etd": "2027-05-12T08:00:00.000Z",
+      "eta": "2027-06-05T08:00:00.000Z",
+      "cutoffDate": "2027-05-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0121",
+      "vesselName": "Capital Carrier 21",
+      "voyageNumber": "CC-2027-0121",
+      "originPort": "Madrid",
+      "destinationPort": "Majuro",
+      "etd": "2027-05-15T08:00:00.000Z",
+      "eta": "2027-05-25T08:00:00.000Z",
+      "cutoffDate": "2027-05-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0122",
+      "vesselName": "Capital Carrier 22",
+      "voyageNumber": "CC-2027-0122",
+      "originPort": "Majuro",
+      "destinationPort": "Malé",
+      "etd": "2027-05-18T08:00:00.000Z",
+      "eta": "2027-05-29T08:00:00.000Z",
+      "cutoffDate": "2027-05-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0123",
+      "vesselName": "Capital Carrier 23",
+      "voyageNumber": "CC-2027-0123",
+      "originPort": "Malé",
+      "destinationPort": "Mamoudzou",
+      "etd": "2027-05-21T08:00:00.000Z",
+      "eta": "2027-06-02T08:00:00.000Z",
+      "cutoffDate": "2027-05-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0124",
+      "vesselName": "Capital Carrier 24",
+      "voyageNumber": "CC-2027-0124",
+      "originPort": "Mamoudzou",
+      "destinationPort": "Managua",
+      "etd": "2027-05-24T08:00:00.000Z",
+      "eta": "2027-06-06T08:00:00.000Z",
+      "cutoffDate": "2027-05-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0125",
+      "vesselName": "Capital Carrier 25",
+      "voyageNumber": "CC-2027-0125",
+      "originPort": "Managua",
+      "destinationPort": "Manama",
+      "etd": "2027-05-27T08:00:00.000Z",
+      "eta": "2027-06-10T08:00:00.000Z",
+      "cutoffDate": "2027-05-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0126",
+      "vesselName": "Capital Carrier 26",
+      "voyageNumber": "CC-2027-0126",
+      "originPort": "Manama",
+      "destinationPort": "Manila",
+      "etd": "2027-05-30T08:00:00.000Z",
+      "eta": "2027-06-14T08:00:00.000Z",
+      "cutoffDate": "2027-05-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0127",
+      "vesselName": "Capital Carrier 27",
+      "voyageNumber": "CC-2027-0127",
+      "originPort": "Manila",
+      "destinationPort": "Maputo",
+      "etd": "2027-06-02T08:00:00.000Z",
+      "eta": "2027-06-18T08:00:00.000Z",
+      "cutoffDate": "2027-05-31T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0128",
+      "vesselName": "Capital Carrier 28",
+      "voyageNumber": "CC-2027-0128",
+      "originPort": "Maputo",
+      "destinationPort": "Mariehamn",
+      "etd": "2027-06-05T08:00:00.000Z",
+      "eta": "2027-06-22T08:00:00.000Z",
+      "cutoffDate": "2027-06-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0129",
+      "vesselName": "Capital Carrier 29",
+      "voyageNumber": "CC-2027-0129",
+      "originPort": "Mariehamn",
+      "destinationPort": "Marigot",
+      "etd": "2027-06-08T08:00:00.000Z",
+      "eta": "2027-06-26T08:00:00.000Z",
+      "cutoffDate": "2027-06-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0130",
+      "vesselName": "Capital Carrier 30",
+      "voyageNumber": "CC-2027-0130",
+      "originPort": "Marigot",
+      "destinationPort": "Maseru",
+      "etd": "2027-06-11T08:00:00.000Z",
+      "eta": "2027-06-30T08:00:00.000Z",
+      "cutoffDate": "2027-06-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0131",
+      "vesselName": "Capital Carrier 31",
+      "voyageNumber": "CC-2027-0131",
+      "originPort": "Maseru",
+      "destinationPort": "Mata-Utu",
+      "etd": "2027-06-14T08:00:00.000Z",
+      "eta": "2027-07-04T08:00:00.000Z",
+      "cutoffDate": "2027-06-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0132",
+      "vesselName": "Capital Carrier 32",
+      "voyageNumber": "CC-2027-0132",
+      "originPort": "Mata-Utu",
+      "destinationPort": "Mbabane",
+      "etd": "2027-06-17T08:00:00.000Z",
+      "eta": "2027-07-08T08:00:00.000Z",
+      "cutoffDate": "2027-06-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0133",
+      "vesselName": "Capital Carrier 33",
+      "voyageNumber": "CC-2027-0133",
+      "originPort": "Mbabane",
+      "destinationPort": "Mexico City",
+      "etd": "2027-06-20T08:00:00.000Z",
+      "eta": "2027-07-12T08:00:00.000Z",
+      "cutoffDate": "2027-06-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0134",
+      "vesselName": "Capital Carrier 34",
+      "voyageNumber": "CC-2027-0134",
+      "originPort": "Mexico City",
+      "destinationPort": "Minsk",
+      "etd": "2027-06-23T08:00:00.000Z",
+      "eta": "2027-07-16T08:00:00.000Z",
+      "cutoffDate": "2027-06-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0135",
+      "vesselName": "Capital Carrier 35",
+      "voyageNumber": "CC-2027-0135",
+      "originPort": "Minsk",
+      "destinationPort": "Mogadishu",
+      "etd": "2027-06-26T08:00:00.000Z",
+      "eta": "2027-07-20T08:00:00.000Z",
+      "cutoffDate": "2027-06-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0136",
+      "vesselName": "Capital Carrier 36",
+      "voyageNumber": "CC-2027-0136",
+      "originPort": "Mogadishu",
+      "destinationPort": "Monaco",
+      "etd": "2027-06-29T08:00:00.000Z",
+      "eta": "2027-07-09T08:00:00.000Z",
+      "cutoffDate": "2027-06-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0137",
+      "vesselName": "Capital Carrier 37",
+      "voyageNumber": "CC-2027-0137",
+      "originPort": "Monaco",
+      "destinationPort": "Monrovia",
+      "etd": "2027-07-02T08:00:00.000Z",
+      "eta": "2027-07-13T08:00:00.000Z",
+      "cutoffDate": "2027-06-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0138",
+      "vesselName": "Capital Carrier 38",
+      "voyageNumber": "CC-2027-0138",
+      "originPort": "Monrovia",
+      "destinationPort": "Montevideo",
+      "etd": "2027-07-05T08:00:00.000Z",
+      "eta": "2027-07-17T08:00:00.000Z",
+      "cutoffDate": "2027-07-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0139",
+      "vesselName": "Capital Carrier 39",
+      "voyageNumber": "CC-2027-0139",
+      "originPort": "Montevideo",
+      "destinationPort": "Moroni",
+      "etd": "2027-07-08T08:00:00.000Z",
+      "eta": "2027-07-21T08:00:00.000Z",
+      "cutoffDate": "2027-07-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0140",
+      "vesselName": "Capital Carrier 40",
+      "voyageNumber": "CC-2027-0140",
+      "originPort": "Moroni",
+      "destinationPort": "Moscow",
+      "etd": "2027-07-11T08:00:00.000Z",
+      "eta": "2027-07-25T08:00:00.000Z",
+      "cutoffDate": "2027-07-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0141",
+      "vesselName": "Capital Carrier 41",
+      "voyageNumber": "CC-2027-0141",
+      "originPort": "Moscow",
+      "destinationPort": "Muscat",
+      "etd": "2027-07-14T08:00:00.000Z",
+      "eta": "2027-07-29T08:00:00.000Z",
+      "cutoffDate": "2027-07-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0142",
+      "vesselName": "Capital Carrier 42",
+      "voyageNumber": "CC-2027-0142",
+      "originPort": "Muscat",
+      "destinationPort": "N'Djamena",
+      "etd": "2027-07-17T08:00:00.000Z",
+      "eta": "2027-08-02T08:00:00.000Z",
+      "cutoffDate": "2027-07-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0143",
+      "vesselName": "Capital Carrier 43",
+      "voyageNumber": "CC-2027-0143",
+      "originPort": "N'Djamena",
+      "destinationPort": "Nairobi",
+      "etd": "2027-07-20T08:00:00.000Z",
+      "eta": "2027-08-06T08:00:00.000Z",
+      "cutoffDate": "2027-07-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0144",
+      "vesselName": "Capital Carrier 44",
+      "voyageNumber": "CC-2027-0144",
+      "originPort": "Nairobi",
+      "destinationPort": "Nassau",
+      "etd": "2027-07-23T08:00:00.000Z",
+      "eta": "2027-08-10T08:00:00.000Z",
+      "cutoffDate": "2027-07-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0145",
+      "vesselName": "Capital Carrier 45",
+      "voyageNumber": "CC-2027-0145",
+      "originPort": "Nassau",
+      "destinationPort": "Naypyidaw",
+      "etd": "2027-07-26T08:00:00.000Z",
+      "eta": "2027-08-14T08:00:00.000Z",
+      "cutoffDate": "2027-07-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0146",
+      "vesselName": "Capital Carrier 46",
+      "voyageNumber": "CC-2027-0146",
+      "originPort": "Naypyidaw",
+      "destinationPort": "New Delhi",
+      "etd": "2027-07-29T08:00:00.000Z",
+      "eta": "2027-08-18T08:00:00.000Z",
+      "cutoffDate": "2027-07-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0147",
+      "vesselName": "Capital Carrier 47",
+      "voyageNumber": "CC-2027-0147",
+      "originPort": "New Delhi",
+      "destinationPort": "Ngerulmud",
+      "etd": "2027-08-01T08:00:00.000Z",
+      "eta": "2027-08-22T08:00:00.000Z",
+      "cutoffDate": "2027-07-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0148",
+      "vesselName": "Capital Carrier 48",
+      "voyageNumber": "CC-2027-0148",
+      "originPort": "Ngerulmud",
+      "destinationPort": "Niamey",
+      "etd": "2027-08-04T08:00:00.000Z",
+      "eta": "2027-08-26T08:00:00.000Z",
+      "cutoffDate": "2027-08-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0149",
+      "vesselName": "Capital Carrier 49",
+      "voyageNumber": "CC-2027-0149",
+      "originPort": "Niamey",
+      "destinationPort": "Nicosia",
+      "etd": "2027-08-07T08:00:00.000Z",
+      "eta": "2027-08-30T08:00:00.000Z",
+      "cutoffDate": "2027-08-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0150",
+      "vesselName": "Capital Carrier 50",
+      "voyageNumber": "CC-2027-0150",
+      "originPort": "Nicosia",
+      "destinationPort": "Nouakchott",
+      "etd": "2027-08-10T08:00:00.000Z",
+      "eta": "2027-09-03T08:00:00.000Z",
+      "cutoffDate": "2027-08-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0151",
+      "vesselName": "Capital Carrier 01",
+      "voyageNumber": "CC-2027-0151",
+      "originPort": "Nouakchott",
+      "destinationPort": "Nouméa",
+      "etd": "2027-08-13T08:00:00.000Z",
+      "eta": "2027-08-23T08:00:00.000Z",
+      "cutoffDate": "2027-08-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0152",
+      "vesselName": "Capital Carrier 02",
+      "voyageNumber": "CC-2027-0152",
+      "originPort": "Nouméa",
+      "destinationPort": "Nuku'alofa",
+      "etd": "2027-08-16T08:00:00.000Z",
+      "eta": "2027-08-27T08:00:00.000Z",
+      "cutoffDate": "2027-08-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0153",
+      "vesselName": "Capital Carrier 03",
+      "voyageNumber": "CC-2027-0153",
+      "originPort": "Nuku'alofa",
+      "destinationPort": "Nuuk",
+      "etd": "2027-08-19T08:00:00.000Z",
+      "eta": "2027-08-31T08:00:00.000Z",
+      "cutoffDate": "2027-08-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0154",
+      "vesselName": "Capital Carrier 04",
+      "voyageNumber": "CC-2027-0154",
+      "originPort": "Nuuk",
+      "destinationPort": "Oranjestad",
+      "etd": "2027-08-22T08:00:00.000Z",
+      "eta": "2027-09-04T08:00:00.000Z",
+      "cutoffDate": "2027-08-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0155",
+      "vesselName": "Capital Carrier 05",
+      "voyageNumber": "CC-2027-0155",
+      "originPort": "Oranjestad",
+      "destinationPort": "Oslo",
+      "etd": "2027-08-25T08:00:00.000Z",
+      "eta": "2027-09-08T08:00:00.000Z",
+      "cutoffDate": "2027-08-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0156",
+      "vesselName": "Capital Carrier 06",
+      "voyageNumber": "CC-2027-0156",
+      "originPort": "Oslo",
+      "destinationPort": "Ottawa",
+      "etd": "2027-08-28T08:00:00.000Z",
+      "eta": "2027-09-12T08:00:00.000Z",
+      "cutoffDate": "2027-08-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0157",
+      "vesselName": "Capital Carrier 07",
+      "voyageNumber": "CC-2027-0157",
+      "originPort": "Ottawa",
+      "destinationPort": "Ouagadougou",
+      "etd": "2027-08-31T08:00:00.000Z",
+      "eta": "2027-09-16T08:00:00.000Z",
+      "cutoffDate": "2027-08-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0158",
+      "vesselName": "Capital Carrier 08",
+      "voyageNumber": "CC-2027-0158",
+      "originPort": "Ouagadougou",
+      "destinationPort": "Pago Pago",
+      "etd": "2027-09-03T08:00:00.000Z",
+      "eta": "2027-09-20T08:00:00.000Z",
+      "cutoffDate": "2027-09-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0159",
+      "vesselName": "Capital Carrier 09",
+      "voyageNumber": "CC-2027-0159",
+      "originPort": "Pago Pago",
+      "destinationPort": "Palikir",
+      "etd": "2027-09-06T08:00:00.000Z",
+      "eta": "2027-09-24T08:00:00.000Z",
+      "cutoffDate": "2027-09-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0160",
+      "vesselName": "Capital Carrier 10",
+      "voyageNumber": "CC-2027-0160",
+      "originPort": "Palikir",
+      "destinationPort": "Panama City",
+      "etd": "2027-09-09T08:00:00.000Z",
+      "eta": "2027-09-28T08:00:00.000Z",
+      "cutoffDate": "2027-09-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0161",
+      "vesselName": "Capital Carrier 11",
+      "voyageNumber": "CC-2027-0161",
+      "originPort": "Panama City",
+      "destinationPort": "Papeetē",
+      "etd": "2027-09-12T08:00:00.000Z",
+      "eta": "2027-10-02T08:00:00.000Z",
+      "cutoffDate": "2027-09-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0162",
+      "vesselName": "Capital Carrier 12",
+      "voyageNumber": "CC-2027-0162",
+      "originPort": "Papeetē",
+      "destinationPort": "Paramaribo",
+      "etd": "2027-09-15T08:00:00.000Z",
+      "eta": "2027-10-06T08:00:00.000Z",
+      "cutoffDate": "2027-09-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0163",
+      "vesselName": "Capital Carrier 13",
+      "voyageNumber": "CC-2027-0163",
+      "originPort": "Paramaribo",
+      "destinationPort": "Paris",
+      "etd": "2027-09-18T08:00:00.000Z",
+      "eta": "2027-10-10T08:00:00.000Z",
+      "cutoffDate": "2027-09-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0164",
+      "vesselName": "Capital Carrier 14",
+      "voyageNumber": "CC-2027-0164",
+      "originPort": "Paris",
+      "destinationPort": "Philipsburg",
+      "etd": "2027-09-21T08:00:00.000Z",
+      "eta": "2027-10-14T08:00:00.000Z",
+      "cutoffDate": "2027-09-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0165",
+      "vesselName": "Capital Carrier 15",
+      "voyageNumber": "CC-2027-0165",
+      "originPort": "Philipsburg",
+      "destinationPort": "Phnom Penh",
+      "etd": "2027-09-24T08:00:00.000Z",
+      "eta": "2027-10-18T08:00:00.000Z",
+      "cutoffDate": "2027-09-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0166",
+      "vesselName": "Capital Carrier 16",
+      "voyageNumber": "CC-2027-0166",
+      "originPort": "Phnom Penh",
+      "destinationPort": "Plymouth",
+      "etd": "2027-09-27T08:00:00.000Z",
+      "eta": "2027-10-07T08:00:00.000Z",
+      "cutoffDate": "2027-09-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0167",
+      "vesselName": "Capital Carrier 17",
+      "voyageNumber": "CC-2027-0167",
+      "originPort": "Plymouth",
+      "destinationPort": "Podgorica",
+      "etd": "2027-09-30T08:00:00.000Z",
+      "eta": "2027-10-11T08:00:00.000Z",
+      "cutoffDate": "2027-09-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0168",
+      "vesselName": "Capital Carrier 18",
+      "voyageNumber": "CC-2027-0168",
+      "originPort": "Podgorica",
+      "destinationPort": "Port Louis",
+      "etd": "2027-10-03T08:00:00.000Z",
+      "eta": "2027-10-15T08:00:00.000Z",
+      "cutoffDate": "2027-10-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0169",
+      "vesselName": "Capital Carrier 19",
+      "voyageNumber": "CC-2027-0169",
+      "originPort": "Port Louis",
+      "destinationPort": "Port Moresby",
+      "etd": "2027-10-06T08:00:00.000Z",
+      "eta": "2027-10-19T08:00:00.000Z",
+      "cutoffDate": "2027-10-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0170",
+      "vesselName": "Capital Carrier 20",
+      "voyageNumber": "CC-2027-0170",
+      "originPort": "Port Moresby",
+      "destinationPort": "Port of Spain",
+      "etd": "2027-10-09T08:00:00.000Z",
+      "eta": "2027-10-23T08:00:00.000Z",
+      "cutoffDate": "2027-10-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0171",
+      "vesselName": "Capital Carrier 21",
+      "voyageNumber": "CC-2027-0171",
+      "originPort": "Port of Spain",
+      "destinationPort": "Port Vila",
+      "etd": "2027-10-12T08:00:00.000Z",
+      "eta": "2027-10-27T08:00:00.000Z",
+      "cutoffDate": "2027-10-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0172",
+      "vesselName": "Capital Carrier 22",
+      "voyageNumber": "CC-2027-0172",
+      "originPort": "Port Vila",
+      "destinationPort": "Port-au-Prince",
+      "etd": "2027-10-15T08:00:00.000Z",
+      "eta": "2027-10-31T08:00:00.000Z",
+      "cutoffDate": "2027-10-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0173",
+      "vesselName": "Capital Carrier 23",
+      "voyageNumber": "CC-2027-0173",
+      "originPort": "Port-au-Prince",
+      "destinationPort": "Port-aux-Français",
+      "etd": "2027-10-18T08:00:00.000Z",
+      "eta": "2027-11-04T08:00:00.000Z",
+      "cutoffDate": "2027-10-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0174",
+      "vesselName": "Capital Carrier 24",
+      "voyageNumber": "CC-2027-0174",
+      "originPort": "Port-aux-Français",
+      "destinationPort": "Porto-Novo",
+      "etd": "2027-10-21T08:00:00.000Z",
+      "eta": "2027-11-08T08:00:00.000Z",
+      "cutoffDate": "2027-10-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0175",
+      "vesselName": "Capital Carrier 25",
+      "voyageNumber": "CC-2027-0175",
+      "originPort": "Porto-Novo",
+      "destinationPort": "Prague",
+      "etd": "2027-10-24T08:00:00.000Z",
+      "eta": "2027-11-12T08:00:00.000Z",
+      "cutoffDate": "2027-10-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0176",
+      "vesselName": "Capital Carrier 26",
+      "voyageNumber": "CC-2027-0176",
+      "originPort": "Prague",
+      "destinationPort": "Praia",
+      "etd": "2027-10-27T08:00:00.000Z",
+      "eta": "2027-11-16T08:00:00.000Z",
+      "cutoffDate": "2027-10-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0177",
+      "vesselName": "Capital Carrier 27",
+      "voyageNumber": "CC-2027-0177",
+      "originPort": "Praia",
+      "destinationPort": "Pretoria",
+      "etd": "2027-10-30T08:00:00.000Z",
+      "eta": "2027-11-20T08:00:00.000Z",
+      "cutoffDate": "2027-10-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0178",
+      "vesselName": "Capital Carrier 28",
+      "voyageNumber": "CC-2027-0178",
+      "originPort": "Pretoria",
+      "destinationPort": "Pristina",
+      "etd": "2027-11-02T08:00:00.000Z",
+      "eta": "2027-11-24T08:00:00.000Z",
+      "cutoffDate": "2027-10-31T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0179",
+      "vesselName": "Capital Carrier 29",
+      "voyageNumber": "CC-2027-0179",
+      "originPort": "Pristina",
+      "destinationPort": "Pyongyang",
+      "etd": "2027-11-05T08:00:00.000Z",
+      "eta": "2027-11-28T08:00:00.000Z",
+      "cutoffDate": "2027-11-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0180",
+      "vesselName": "Capital Carrier 30",
+      "voyageNumber": "CC-2027-0180",
+      "originPort": "Pyongyang",
+      "destinationPort": "Quito",
+      "etd": "2027-11-08T08:00:00.000Z",
+      "eta": "2027-12-02T08:00:00.000Z",
+      "cutoffDate": "2027-11-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0181",
+      "vesselName": "Capital Carrier 31",
+      "voyageNumber": "CC-2027-0181",
+      "originPort": "Quito",
+      "destinationPort": "Rabat",
+      "etd": "2027-11-11T08:00:00.000Z",
+      "eta": "2027-11-21T08:00:00.000Z",
+      "cutoffDate": "2027-11-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0182",
+      "vesselName": "Capital Carrier 32",
+      "voyageNumber": "CC-2027-0182",
+      "originPort": "Rabat",
+      "destinationPort": "Ramallah",
+      "etd": "2027-11-14T08:00:00.000Z",
+      "eta": "2027-11-25T08:00:00.000Z",
+      "cutoffDate": "2027-11-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0183",
+      "vesselName": "Capital Carrier 33",
+      "voyageNumber": "CC-2027-0183",
+      "originPort": "Ramallah",
+      "destinationPort": "Reykjavik",
+      "etd": "2027-11-17T08:00:00.000Z",
+      "eta": "2027-11-29T08:00:00.000Z",
+      "cutoffDate": "2027-11-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0184",
+      "vesselName": "Capital Carrier 34",
+      "voyageNumber": "CC-2027-0184",
+      "originPort": "Reykjavik",
+      "destinationPort": "Riga",
+      "etd": "2027-11-20T08:00:00.000Z",
+      "eta": "2027-12-03T08:00:00.000Z",
+      "cutoffDate": "2027-11-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0185",
+      "vesselName": "Capital Carrier 35",
+      "voyageNumber": "CC-2027-0185",
+      "originPort": "Riga",
+      "destinationPort": "Riyadh",
+      "etd": "2027-11-23T08:00:00.000Z",
+      "eta": "2027-12-07T08:00:00.000Z",
+      "cutoffDate": "2027-11-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0186",
+      "vesselName": "Capital Carrier 36",
+      "voyageNumber": "CC-2027-0186",
+      "originPort": "Riyadh",
+      "destinationPort": "Road Town",
+      "etd": "2027-11-26T08:00:00.000Z",
+      "eta": "2027-12-11T08:00:00.000Z",
+      "cutoffDate": "2027-11-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0187",
+      "vesselName": "Capital Carrier 37",
+      "voyageNumber": "CC-2027-0187",
+      "originPort": "Road Town",
+      "destinationPort": "Rome",
+      "etd": "2027-11-29T08:00:00.000Z",
+      "eta": "2027-12-15T08:00:00.000Z",
+      "cutoffDate": "2027-11-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0188",
+      "vesselName": "Capital Carrier 38",
+      "voyageNumber": "CC-2027-0188",
+      "originPort": "Rome",
+      "destinationPort": "Roseau",
+      "etd": "2027-12-02T08:00:00.000Z",
+      "eta": "2027-12-19T08:00:00.000Z",
+      "cutoffDate": "2027-11-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0189",
+      "vesselName": "Capital Carrier 39",
+      "voyageNumber": "CC-2027-0189",
+      "originPort": "Roseau",
+      "destinationPort": "Saint Helier",
+      "etd": "2027-12-05T08:00:00.000Z",
+      "eta": "2027-12-23T08:00:00.000Z",
+      "cutoffDate": "2027-12-03T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0190",
+      "vesselName": "Capital Carrier 40",
+      "voyageNumber": "CC-2027-0190",
+      "originPort": "Saint Helier",
+      "destinationPort": "Saint John's",
+      "etd": "2027-12-08T08:00:00.000Z",
+      "eta": "2027-12-27T08:00:00.000Z",
+      "cutoffDate": "2027-12-06T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0191",
+      "vesselName": "Capital Carrier 41",
+      "voyageNumber": "CC-2027-0191",
+      "originPort": "Saint John's",
+      "destinationPort": "Saint-Denis",
+      "etd": "2027-12-11T08:00:00.000Z",
+      "eta": "2027-12-31T08:00:00.000Z",
+      "cutoffDate": "2027-12-09T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0192",
+      "vesselName": "Capital Carrier 42",
+      "voyageNumber": "CC-2027-0192",
+      "originPort": "Saint-Denis",
+      "destinationPort": "Saint-Pierre",
+      "etd": "2027-12-14T08:00:00.000Z",
+      "eta": "2028-01-04T08:00:00.000Z",
+      "cutoffDate": "2027-12-12T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0193",
+      "vesselName": "Capital Carrier 43",
+      "voyageNumber": "CC-2027-0193",
+      "originPort": "Saint-Pierre",
+      "destinationPort": "Saipan",
+      "etd": "2027-12-17T08:00:00.000Z",
+      "eta": "2028-01-08T08:00:00.000Z",
+      "cutoffDate": "2027-12-15T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0194",
+      "vesselName": "Capital Carrier 44",
+      "voyageNumber": "CC-2027-0194",
+      "originPort": "Saipan",
+      "destinationPort": "San José",
+      "etd": "2027-12-20T08:00:00.000Z",
+      "eta": "2028-01-12T08:00:00.000Z",
+      "cutoffDate": "2027-12-18T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0195",
+      "vesselName": "Capital Carrier 45",
+      "voyageNumber": "CC-2027-0195",
+      "originPort": "San José",
+      "destinationPort": "San Juan",
+      "etd": "2027-12-23T08:00:00.000Z",
+      "eta": "2028-01-16T08:00:00.000Z",
+      "cutoffDate": "2027-12-21T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0196",
+      "vesselName": "Capital Carrier 46",
+      "voyageNumber": "CC-2027-0196",
+      "originPort": "San Juan",
+      "destinationPort": "San Salvador",
+      "etd": "2027-12-26T08:00:00.000Z",
+      "eta": "2028-01-05T08:00:00.000Z",
+      "cutoffDate": "2027-12-24T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0197",
+      "vesselName": "Capital Carrier 47",
+      "voyageNumber": "CC-2027-0197",
+      "originPort": "San Salvador",
+      "destinationPort": "Sana'a",
+      "etd": "2027-12-29T08:00:00.000Z",
+      "eta": "2028-01-09T08:00:00.000Z",
+      "cutoffDate": "2027-12-27T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0198",
+      "vesselName": "Capital Carrier 48",
+      "voyageNumber": "CC-2028-0198",
+      "originPort": "Sana'a",
+      "destinationPort": "Santiago",
+      "etd": "2028-01-01T08:00:00.000Z",
+      "eta": "2028-01-13T08:00:00.000Z",
+      "cutoffDate": "2027-12-30T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0199",
+      "vesselName": "Capital Carrier 49",
+      "voyageNumber": "CC-2028-0199",
+      "originPort": "Santiago",
+      "destinationPort": "Santo Domingo",
+      "etd": "2028-01-04T08:00:00.000Z",
+      "eta": "2028-01-17T08:00:00.000Z",
+      "cutoffDate": "2028-01-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0200",
+      "vesselName": "Capital Carrier 50",
+      "voyageNumber": "CC-2028-0200",
+      "originPort": "Santo Domingo",
+      "destinationPort": "São Tomé",
+      "etd": "2028-01-07T08:00:00.000Z",
+      "eta": "2028-01-21T08:00:00.000Z",
+      "cutoffDate": "2028-01-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0201",
+      "vesselName": "Capital Carrier 01",
+      "voyageNumber": "CC-2028-0201",
+      "originPort": "São Tomé",
+      "destinationPort": "Sarajevo",
+      "etd": "2028-01-10T08:00:00.000Z",
+      "eta": "2028-01-25T08:00:00.000Z",
+      "cutoffDate": "2028-01-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0202",
+      "vesselName": "Capital Carrier 02",
+      "voyageNumber": "CC-2028-0202",
+      "originPort": "Sarajevo",
+      "destinationPort": "Seoul",
+      "etd": "2028-01-13T08:00:00.000Z",
+      "eta": "2028-01-29T08:00:00.000Z",
+      "cutoffDate": "2028-01-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0203",
+      "vesselName": "Capital Carrier 03",
+      "voyageNumber": "CC-2028-0203",
+      "originPort": "Seoul",
+      "destinationPort": "Singapore",
+      "etd": "2028-01-16T08:00:00.000Z",
+      "eta": "2028-02-02T08:00:00.000Z",
+      "cutoffDate": "2028-01-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0204",
+      "vesselName": "Capital Carrier 04",
+      "voyageNumber": "CC-2028-0204",
+      "originPort": "Singapore",
+      "destinationPort": "Skopje",
+      "etd": "2028-01-19T08:00:00.000Z",
+      "eta": "2028-02-06T08:00:00.000Z",
+      "cutoffDate": "2028-01-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0205",
+      "vesselName": "Capital Carrier 05",
+      "voyageNumber": "CC-2028-0205",
+      "originPort": "Skopje",
+      "destinationPort": "Sofia",
+      "etd": "2028-01-22T08:00:00.000Z",
+      "eta": "2028-02-10T08:00:00.000Z",
+      "cutoffDate": "2028-01-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0206",
+      "vesselName": "Capital Carrier 06",
+      "voyageNumber": "CC-2028-0206",
+      "originPort": "Sofia",
+      "destinationPort": "South Tarawa",
+      "etd": "2028-01-25T08:00:00.000Z",
+      "eta": "2028-02-14T08:00:00.000Z",
+      "cutoffDate": "2028-01-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0207",
+      "vesselName": "Capital Carrier 07",
+      "voyageNumber": "CC-2028-0207",
+      "originPort": "South Tarawa",
+      "destinationPort": "Sri Jayawardenepura Kotte",
+      "etd": "2028-01-28T08:00:00.000Z",
+      "eta": "2028-02-18T08:00:00.000Z",
+      "cutoffDate": "2028-01-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0208",
+      "vesselName": "Capital Carrier 08",
+      "voyageNumber": "CC-2028-0208",
+      "originPort": "Sri Jayawardenepura Kotte",
+      "destinationPort": "St. George's",
+      "etd": "2028-01-31T08:00:00.000Z",
+      "eta": "2028-02-22T08:00:00.000Z",
+      "cutoffDate": "2028-01-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0209",
+      "vesselName": "Capital Carrier 09",
+      "voyageNumber": "CC-2028-0209",
+      "originPort": "St. George's",
+      "destinationPort": "St. Peter Port",
+      "etd": "2028-02-03T08:00:00.000Z",
+      "eta": "2028-02-26T08:00:00.000Z",
+      "cutoffDate": "2028-02-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0210",
+      "vesselName": "Capital Carrier 10",
+      "voyageNumber": "CC-2028-0210",
+      "originPort": "St. Peter Port",
+      "destinationPort": "Stanley",
+      "etd": "2028-02-06T08:00:00.000Z",
+      "eta": "2028-03-01T08:00:00.000Z",
+      "cutoffDate": "2028-02-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0211",
+      "vesselName": "Capital Carrier 11",
+      "voyageNumber": "CC-2028-0211",
+      "originPort": "Stanley",
+      "destinationPort": "Stockholm",
+      "etd": "2028-02-09T08:00:00.000Z",
+      "eta": "2028-02-19T08:00:00.000Z",
+      "cutoffDate": "2028-02-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0212",
+      "vesselName": "Capital Carrier 12",
+      "voyageNumber": "CC-2028-0212",
+      "originPort": "Stockholm",
+      "destinationPort": "Sucre",
+      "etd": "2028-02-12T08:00:00.000Z",
+      "eta": "2028-02-23T08:00:00.000Z",
+      "cutoffDate": "2028-02-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0213",
+      "vesselName": "Capital Carrier 13",
+      "voyageNumber": "CC-2028-0213",
+      "originPort": "Sucre",
+      "destinationPort": "Suva",
+      "etd": "2028-02-15T08:00:00.000Z",
+      "eta": "2028-02-27T08:00:00.000Z",
+      "cutoffDate": "2028-02-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0214",
+      "vesselName": "Capital Carrier 14",
+      "voyageNumber": "CC-2028-0214",
+      "originPort": "Suva",
+      "destinationPort": "Taipei",
+      "etd": "2028-02-18T08:00:00.000Z",
+      "eta": "2028-03-02T08:00:00.000Z",
+      "cutoffDate": "2028-02-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0215",
+      "vesselName": "Capital Carrier 15",
+      "voyageNumber": "CC-2028-0215",
+      "originPort": "Taipei",
+      "destinationPort": "Tallinn",
+      "etd": "2028-02-21T08:00:00.000Z",
+      "eta": "2028-03-06T08:00:00.000Z",
+      "cutoffDate": "2028-02-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0216",
+      "vesselName": "Capital Carrier 16",
+      "voyageNumber": "CC-2028-0216",
+      "originPort": "Tallinn",
+      "destinationPort": "Tashkent",
+      "etd": "2028-02-24T08:00:00.000Z",
+      "eta": "2028-03-10T08:00:00.000Z",
+      "cutoffDate": "2028-02-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0217",
+      "vesselName": "Capital Carrier 17",
+      "voyageNumber": "CC-2028-0217",
+      "originPort": "Tashkent",
+      "destinationPort": "Tbilisi",
+      "etd": "2028-02-27T08:00:00.000Z",
+      "eta": "2028-03-14T08:00:00.000Z",
+      "cutoffDate": "2028-02-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0218",
+      "vesselName": "Capital Carrier 18",
+      "voyageNumber": "CC-2028-0218",
+      "originPort": "Tbilisi",
+      "destinationPort": "Tegucigalpa",
+      "etd": "2028-03-01T08:00:00.000Z",
+      "eta": "2028-03-18T08:00:00.000Z",
+      "cutoffDate": "2028-02-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0219",
+      "vesselName": "Capital Carrier 19",
+      "voyageNumber": "CC-2028-0219",
+      "originPort": "Tegucigalpa",
+      "destinationPort": "Tehran",
+      "etd": "2028-03-04T08:00:00.000Z",
+      "eta": "2028-03-22T08:00:00.000Z",
+      "cutoffDate": "2028-03-02T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0220",
+      "vesselName": "Capital Carrier 20",
+      "voyageNumber": "CC-2028-0220",
+      "originPort": "Tehran",
+      "destinationPort": "The Valley",
+      "etd": "2028-03-07T08:00:00.000Z",
+      "eta": "2028-03-26T08:00:00.000Z",
+      "cutoffDate": "2028-03-05T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0221",
+      "vesselName": "Capital Carrier 21",
+      "voyageNumber": "CC-2028-0221",
+      "originPort": "The Valley",
+      "destinationPort": "Thimphu",
+      "etd": "2028-03-10T08:00:00.000Z",
+      "eta": "2028-03-30T08:00:00.000Z",
+      "cutoffDate": "2028-03-08T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0222",
+      "vesselName": "Capital Carrier 22",
+      "voyageNumber": "CC-2028-0222",
+      "originPort": "Thimphu",
+      "destinationPort": "Tirana",
+      "etd": "2028-03-13T08:00:00.000Z",
+      "eta": "2028-04-03T08:00:00.000Z",
+      "cutoffDate": "2028-03-11T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0223",
+      "vesselName": "Capital Carrier 23",
+      "voyageNumber": "CC-2028-0223",
+      "originPort": "Tirana",
+      "destinationPort": "Tokyo",
+      "etd": "2028-03-16T08:00:00.000Z",
+      "eta": "2028-04-07T08:00:00.000Z",
+      "cutoffDate": "2028-03-14T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0224",
+      "vesselName": "Capital Carrier 24",
+      "voyageNumber": "CC-2028-0224",
+      "originPort": "Tokyo",
+      "destinationPort": "Tórshavn",
+      "etd": "2028-03-19T08:00:00.000Z",
+      "eta": "2028-04-11T08:00:00.000Z",
+      "cutoffDate": "2028-03-17T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0225",
+      "vesselName": "Capital Carrier 25",
+      "voyageNumber": "CC-2028-0225",
+      "originPort": "Tórshavn",
+      "destinationPort": "Tripoli",
+      "etd": "2028-03-22T08:00:00.000Z",
+      "eta": "2028-04-15T08:00:00.000Z",
+      "cutoffDate": "2028-03-20T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0226",
+      "vesselName": "Capital Carrier 26",
+      "voyageNumber": "CC-2028-0226",
+      "originPort": "Tripoli",
+      "destinationPort": "Tunis",
+      "etd": "2028-03-25T08:00:00.000Z",
+      "eta": "2028-04-04T08:00:00.000Z",
+      "cutoffDate": "2028-03-23T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0227",
+      "vesselName": "Capital Carrier 27",
+      "voyageNumber": "CC-2028-0227",
+      "originPort": "Tunis",
+      "destinationPort": "Ulan Bator",
+      "etd": "2028-03-28T08:00:00.000Z",
+      "eta": "2028-04-08T08:00:00.000Z",
+      "cutoffDate": "2028-03-26T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0228",
+      "vesselName": "Capital Carrier 28",
+      "voyageNumber": "CC-2028-0228",
+      "originPort": "Ulan Bator",
+      "destinationPort": "Vaduz",
+      "etd": "2028-03-31T08:00:00.000Z",
+      "eta": "2028-04-12T08:00:00.000Z",
+      "cutoffDate": "2028-03-29T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0229",
+      "vesselName": "Capital Carrier 29",
+      "voyageNumber": "CC-2028-0229",
+      "originPort": "Vaduz",
+      "destinationPort": "Valletta",
+      "etd": "2028-04-03T08:00:00.000Z",
+      "eta": "2028-04-16T08:00:00.000Z",
+      "cutoffDate": "2028-04-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0230",
+      "vesselName": "Capital Carrier 30",
+      "voyageNumber": "CC-2028-0230",
+      "originPort": "Valletta",
+      "destinationPort": "Vatican City",
+      "etd": "2028-04-06T08:00:00.000Z",
+      "eta": "2028-04-20T08:00:00.000Z",
+      "cutoffDate": "2028-04-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0231",
+      "vesselName": "Capital Carrier 31",
+      "voyageNumber": "CC-2028-0231",
+      "originPort": "Vatican City",
+      "destinationPort": "Victoria",
+      "etd": "2028-04-09T08:00:00.000Z",
+      "eta": "2028-04-24T08:00:00.000Z",
+      "cutoffDate": "2028-04-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0232",
+      "vesselName": "Capital Carrier 32",
+      "voyageNumber": "CC-2028-0232",
+      "originPort": "Victoria",
+      "destinationPort": "Vienna",
+      "etd": "2028-04-12T08:00:00.000Z",
+      "eta": "2028-04-28T08:00:00.000Z",
+      "cutoffDate": "2028-04-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0233",
+      "vesselName": "Capital Carrier 33",
+      "voyageNumber": "CC-2028-0233",
+      "originPort": "Vienna",
+      "destinationPort": "Vientiane",
+      "etd": "2028-04-15T08:00:00.000Z",
+      "eta": "2028-05-02T08:00:00.000Z",
+      "cutoffDate": "2028-04-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0234",
+      "vesselName": "Capital Carrier 34",
+      "voyageNumber": "CC-2028-0234",
+      "originPort": "Vientiane",
+      "destinationPort": "Vilnius",
+      "etd": "2028-04-18T08:00:00.000Z",
+      "eta": "2028-05-06T08:00:00.000Z",
+      "cutoffDate": "2028-04-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0235",
+      "vesselName": "Capital Carrier 35",
+      "voyageNumber": "CC-2028-0235",
+      "originPort": "Vilnius",
+      "destinationPort": "Warsaw",
+      "etd": "2028-04-21T08:00:00.000Z",
+      "eta": "2028-05-10T08:00:00.000Z",
+      "cutoffDate": "2028-04-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0236",
+      "vesselName": "Capital Carrier 36",
+      "voyageNumber": "CC-2028-0236",
+      "originPort": "Warsaw",
+      "destinationPort": "Washington DC",
+      "etd": "2028-04-24T08:00:00.000Z",
+      "eta": "2028-05-14T08:00:00.000Z",
+      "cutoffDate": "2028-04-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0237",
+      "vesselName": "Capital Carrier 37",
+      "voyageNumber": "CC-2028-0237",
+      "originPort": "Washington DC",
+      "destinationPort": "Washington, D.C.",
+      "etd": "2028-04-27T08:00:00.000Z",
+      "eta": "2028-05-18T08:00:00.000Z",
+      "cutoffDate": "2028-04-25T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0238",
+      "vesselName": "Capital Carrier 38",
+      "voyageNumber": "CC-2028-0238",
+      "originPort": "Washington, D.C.",
+      "destinationPort": "Wellington",
+      "etd": "2028-04-30T08:00:00.000Z",
+      "eta": "2028-05-22T08:00:00.000Z",
+      "cutoffDate": "2028-04-28T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0239",
+      "vesselName": "Capital Carrier 39",
+      "voyageNumber": "CC-2028-0239",
+      "originPort": "Wellington",
+      "destinationPort": "West Island",
+      "etd": "2028-05-03T08:00:00.000Z",
+      "eta": "2028-05-26T08:00:00.000Z",
+      "cutoffDate": "2028-05-01T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0240",
+      "vesselName": "Capital Carrier 40",
+      "voyageNumber": "CC-2028-0240",
+      "originPort": "West Island",
+      "destinationPort": "Willemstad",
+      "etd": "2028-05-06T08:00:00.000Z",
+      "eta": "2028-05-30T08:00:00.000Z",
+      "cutoffDate": "2028-05-04T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0241",
+      "vesselName": "Capital Carrier 41",
+      "voyageNumber": "CC-2028-0241",
+      "originPort": "Willemstad",
+      "destinationPort": "Windhoek",
+      "etd": "2028-05-09T08:00:00.000Z",
+      "eta": "2028-05-19T08:00:00.000Z",
+      "cutoffDate": "2028-05-07T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0242",
+      "vesselName": "Capital Carrier 42",
+      "voyageNumber": "CC-2028-0242",
+      "originPort": "Windhoek",
+      "destinationPort": "Yamoussoukro",
+      "etd": "2028-05-12T08:00:00.000Z",
+      "eta": "2028-05-23T08:00:00.000Z",
+      "cutoffDate": "2028-05-10T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0243",
+      "vesselName": "Capital Carrier 43",
+      "voyageNumber": "CC-2028-0243",
+      "originPort": "Yamoussoukro",
+      "destinationPort": "Yaoundé",
+      "etd": "2028-05-15T08:00:00.000Z",
+      "eta": "2028-05-27T08:00:00.000Z",
+      "cutoffDate": "2028-05-13T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0244",
+      "vesselName": "Capital Carrier 44",
+      "voyageNumber": "CC-2028-0244",
+      "originPort": "Yaoundé",
+      "destinationPort": "Yaren",
+      "etd": "2028-05-18T08:00:00.000Z",
+      "eta": "2028-05-31T08:00:00.000Z",
+      "cutoffDate": "2028-05-16T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0245",
+      "vesselName": "Capital Carrier 45",
+      "voyageNumber": "CC-2028-0245",
+      "originPort": "Yaren",
+      "destinationPort": "Yerevan",
+      "etd": "2028-05-21T08:00:00.000Z",
+      "eta": "2028-06-04T08:00:00.000Z",
+      "cutoffDate": "2028-05-19T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0246",
+      "vesselName": "Capital Carrier 46",
+      "voyageNumber": "CC-2028-0246",
+      "originPort": "Yerevan",
+      "destinationPort": "Zagreb",
+      "etd": "2028-05-24T08:00:00.000Z",
+      "eta": "2028-06-08T08:00:00.000Z",
+      "cutoffDate": "2028-05-22T08:00:00.000Z"
+    },
+    {
+      "id": "cap-0247",
+      "vesselName": "Capital Carrier 47",
+      "voyageNumber": "CC-2028-0247",
+      "originPort": "Zagreb",
+      "destinationPort": "Abu Dhabi",
+      "etd": "2028-05-27T08:00:00.000Z",
+      "eta": "2028-06-12T08:00:00.000Z",
+      "cutoffDate": "2028-05-25T08:00:00.000Z"
+    }
+  ]
+}

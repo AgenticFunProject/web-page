@@ -24,6 +24,45 @@ function hideError() {
     document.getElementById('error-message').classList.add('hidden');
 }
 
+function getUserFriendlyErrorMessage(action, error) {
+    const rawMessage = String(error?.message || '').trim();
+    const normalizedMessage = rawMessage.toLowerCase();
+
+    if (!rawMessage) {
+        return `Something went wrong while trying to ${action}. Please try again.`;
+    }
+
+    if (normalizedMessage.includes('failed to fetch') || normalizedMessage.includes('networkerror')) {
+        return `We could not reach the service to ${action}. Please check your connection and try again.`;
+    }
+
+    if (normalizedMessage.includes('schedule not found')) {
+        return 'The selected schedule is no longer available. Please search again.';
+    }
+
+    if (normalizedMessage.includes('unsupported currency')) {
+        return 'The requested currency is not supported for this quote.';
+    }
+
+    if (normalizedMessage.includes('no rate available')) {
+        return 'No commercial rate is available for this route and equipment yet.';
+    }
+
+    if (normalizedMessage.includes('bookings') || normalizedMessage.includes('submit booking')) {
+        return 'We could not submit the booking right now. Please review the details and try again.';
+    }
+
+    if (normalizedMessage.includes('quotes') || normalizedMessage.includes('get quote')) {
+        return 'We could not generate a quote right now. Please try a different shipment setup or try again shortly.';
+    }
+
+    if (normalizedMessage.includes('schedules')) {
+        return 'We could not load schedules right now. Please adjust your search or try again shortly.';
+    }
+
+    return rawMessage;
+}
+
 function formatDate(dateStr) {
     return new Date(dateStr).toLocaleDateString('en-US', {
         year: 'numeric', month: 'short', day: 'numeric'
@@ -44,7 +83,7 @@ document.getElementById('search-form').addEventListener('submit', async (e) => {
         const schedules = await API.schedules.search(origin, destination, dateFrom, dateTo);
         displaySchedules(schedules);
     } catch (error) {
-        showError('Unable to fetch schedules. Please try again later.');
+        showError(getUserFriendlyErrorMessage('load schedules', error));
         console.error('Search error:', error);
     }
 });
@@ -121,7 +160,7 @@ document.getElementById('quote-form').addEventListener('submit', async (e) => {
         state.currentQuote = quote;
         displayQuote(quote);
     } catch (error) {
-        showError('Unable to get quote. Please try again later.');
+        showError(getUserFriendlyErrorMessage('generate a quote', error));
         console.error('Quote error:', error);
     }
 });
@@ -173,7 +212,7 @@ document.getElementById('booking-form').addEventListener('submit', async (e) => 
         const confirmation = await API.booking.submit(bookingData);
         displayConfirmation(confirmation);
     } catch (error) {
-        showError('Unable to submit booking. Please try again later.');
+        showError(getUserFriendlyErrorMessage('submit the booking', error));
         console.error('Booking error:', error);
     }
 });

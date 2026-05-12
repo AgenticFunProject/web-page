@@ -1,63 +1,62 @@
 # web-page
 
-Customer Portal — Demo
-======================
+Customer Portal Demo
+====================
 
 Overview
 --------
-This is a small single-page React app (Vite + React + Tailwind) plus a lightweight Express mock API so the UI is demo-ready locally.
+This project is a static single-page shipping booking demo. It runs directly from HTML, CSS, and browser-side JavaScript and now includes local fallback behavior so the main flow still works without a backend API.
 
-Prerequisites
--------------
-- Node.js (16+ recommended) and npm
-- Network access to npm registry (or configure npm for your proxy)
+Current behavior
+----------------
+- Schedule search first tries `/api/schedules` and falls back to local mock data.
+- Quote generation first tries `/api/quotes` and falls back to local browser-side quote calculation.
+- API failures are surfaced with user-friendly error messages.
+- Mock schedule data includes capital-city coverage and synthetic schedule generation for unmatched demo searches.
 
-Quick start (recommended)
--------------------------
-1. Open a terminal and enter the project:
-
-   cd customer-portal
-
-2. Install dependencies:
-
-   npm install
-
-   If the mock server fails to run because express/cors/concurrently are missing, run:
-
-   npm install express cors concurrently
-
-3. Start both mock API and dev server:
-
-   npm run dev:all
-
-   - Mock API: http://localhost:4000/api
-   - Vite dev server: usually http://localhost:5173
-
-Alternative (separate)
-----------------------
-- Start mock API only:
-  npm run mock
-- Start dev server only:
-  npm run dev
-
-Environment
+Quick start
 -----------
-- Frontend reads VITE_API_BASE (e.g., VITE_API_BASE=http://localhost:4000/api). Default is http://localhost:4000/api.
+1. Open a terminal in the project:
 
-Build
+   cd mayor
+
+2. Start a local static server:
+
+   python3 -m http.server 8080 --directory .
+
+3. Open the app:
+
+   http://localhost:8080
+
+Notes
 -----
-- npm run build
-- npm run preview (serve production build locally)
+- This repo currently does not include a working `package.json`, so `npm run dev` and `npm run dev:all` are not the correct startup path here.
+- The static server is enough for the demo flow because schedules and quotes have local fallbacks.
+- Booking submission still expects an API unless additional offline booking fallback logic is added.
 
-Notes & Troubleshooting
------------------------
-- If npm install hangs (corporate proxy / certificate issues), configure npm proxy/CA or run install on a machine with open internet access.
-- The mock server is intentionally simple — business logic belongs in real backend services.
+Mock data
+---------
+- Mock schedules live in `mock/db.json`.
+- The mock database includes 247 capital-city schedule entries.
+- If a direct route is not found in the mock file, the app generates synthetic demo schedules so searches still return usable results.
+
+Search examples
+---------------
+- `Singapore` to `Los Angeles`
+- `Budapest` to `London`
+- `SGSIN` to `USLAX`
+- `NYC` to `LON`
 
 Files of interest
 -----------------
-- src/ — React app and components
-- mock-server/index.js — mock API (schedules, quotes, bookings)
-- package.json — scripts (dev, mock, dev:all)
+- `index.html` — static app shell
+- `css/styles.css` — page styling
+- `js/app.js` — UI flow and user-facing error handling
+- `js/api.js` — API calls, mock fallbacks, synthetic schedules, and quote logic
+- `mock/db.json` — local schedule dataset
 
-Enjoy the demo. Report issues and next feature requests here.
+Troubleshooting
+---------------
+- If you do not see the latest behavior, hard refresh the page.
+- If schedule search shows no exact route, the app should still generate demo schedules.
+- If quote creation cannot reach `/api/quotes`, the app should compute a local demo quote automatically.

@@ -18,21 +18,39 @@ Quick start
 -----------
 1. Open a terminal in the project:
 
-   cd mayor
+   cd web-page
 
-2. Start a local static server:
+2. Start the local gateway and static server:
 
-   python3 -m http.server 8080 --directory .
+   npm install
+   npm run dev
 
 3. Open the app:
 
-   http://localhost:8080
+   http://localhost:4000
 
 Notes
 -----
-- This repo currently does not include a working `package.json`, so `npm run dev` and `npm run dev:all` are not the correct startup path here.
-- The static server is enough for the demo flow because schedules and quotes have local fallbacks.
+- `npm run dev` starts `server.js`, serves the static app, and proxies `/api/quotes` and `/api/equipment`.
+- The static app still has local fallbacks for schedules and quote generation when backend APIs are unavailable.
 - Booking submission still expects an API unless additional offline booking fallback logic is added.
+
+Local dev tokens
+----------------
+The gateway can mint HS256 JWTs for local backend smoke testing. Both endpoints accept optional `subject`, `scopes`, and `expiresInMinutes` JSON fields.
+
+- `POST /api/auth/token` returns an Equipments-audience token with default audience `equipments-service` and scopes `equipments:read equipments:modify`.
+- `POST /api/auth/quotes-token` returns a Quotes-audience token with default audience `quotes-service` and scopes `quotes:admin quotes:approve`.
+
+Example:
+
+```bash
+curl -s http://localhost:4000/api/auth/quotes-token \
+  -H 'Content-Type: application/json' \
+  -d '{"subject":"local-quotes-admin"}'
+```
+
+Use `AUTH_JWT_SECRET`, `AUTH_JWT_ISSUER`, `AUTH_JWT_AUDIENCE`, and `AUTH_QUOTES_JWT_AUDIENCE` to override local JWT values. This is only a local developer helper, not production identity-provider behavior.
 
 Mock data
 ---------

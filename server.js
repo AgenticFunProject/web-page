@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const https = require('https');
 const crypto = require('crypto');
 const path = require('path');
 
@@ -7,7 +8,7 @@ const app = express();
 
 const QUOTES_TARGET = process.env.QUOTES_URL || 'http://localhost:8000';
 const EQUIPMENT_TARGET = process.env.EQUIPMENT_URL || 'http://localhost:3000';
-const AUTH_SECRET = process.env.AUTH_JWT_SECRET || 'equipments-dev-secret';
+const AUTH_SECRET = process.env.AUTH_JWT_SECRET || 'equipments-prod-dev-secret-change-me-2026';
 const AUTH_ISSUER = process.env.AUTH_JWT_ISSUER || 'platform-auth';
 const AUTH_AUDIENCE = process.env.AUTH_JWT_AUDIENCE || 'equipments-service';
 const AUTH_QUOTES_AUDIENCE = process.env.AUTH_QUOTES_JWT_AUDIENCE || 'quotes-service';
@@ -61,7 +62,11 @@ app.use((req, res, next) => {
 
 function parseTarget(url) {
   const parsed = new URL(url);
-  return { hostname: parsed.hostname, port: parseInt(parsed.port, 10) };
+  return {
+    hostname: parsed.hostname,
+    port: parseInt(parsed.port, 10) || (parsed.protocol === 'https:' ? 443 : 80),
+    protocol: parsed.protocol,
+  };
 }
 
 const QUOTES = parseTarget(QUOTES_TARGET);
@@ -92,7 +97,7 @@ app.use('/api', (req, res) => {
   };
   delete options.headers['host'];
 
-  const proxyReq = http.request(options, (proxyRes) => {
+  const proxyReq = (target.protocol === 'https:' ? https : http).request(options, (proxyRes) => {
     res.writeHead(proxyRes.statusCode, proxyRes.headers);
     proxyRes.pipe(res);
   });

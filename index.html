@@ -19,11 +19,15 @@
             <form id="search-form">
                 <div class="form-group">
                     <label for="origin">Origin Port</label>
-                    <input type="text" id="origin" name="origin" required placeholder="e.g., SGSIN (Singapore)">
+                    <select id="origin" name="origin" required>
+                        <option value="">Select origin city</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="destination">Destination Port</label>
-                    <input type="text" id="destination" name="destination" required placeholder="e.g., USLAX (Los Angeles)">
+                    <select id="destination" name="destination" required>
+                        <option value="">Select destination city</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="date-from">Date Range</label>
@@ -50,9 +54,6 @@
                     <label for="equipment-type">Equipment Type</label>
                     <select id="equipment-type" name="equipmentType" required>
                         <option value="">Select equipment type</option>
-                        <option value="20ft">20ft Container</option>
-                        <option value="40ft">40ft Container</option>
-                        <option value="40ft HC">40ft High Cube</option>
                     </select>
                 </div>
                 <div class="form-group">

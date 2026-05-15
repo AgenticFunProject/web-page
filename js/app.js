@@ -1,3 +1,19 @@
+const PORT_DISPLAY_NAMES = {
+    NLRTM: 'Rotterdam',
+    USNYC: 'New York',
+    CNSHA: 'Shanghai',
+    DEHAM: 'Hamburg',
+    SGSIN: 'Singapore',
+    USLAX: 'Los Angeles',
+    HKHKG: 'Hong Kong',
+    LON: 'London',
+    BRSSZ: 'Santos'
+};
+
+function displayPortName(port) {
+    return PORT_DISPLAY_NAMES[port] || port;
+}
+
 const state = {
     selectedSchedule: null,
     currentQuote: null
@@ -69,6 +85,99 @@ function formatDate(dateStr) {
     });
 }
 
+const ADDITIONAL_PORTS = ['Rotterdam', 'Shanghai', 'New York', 'Hamburg', 'Los Angeles', 'Hong Kong', 'Singapore', 'Santos'];
+
+async function loadAvailableCities() {
+    const response = await fetch('/mock/db.json');
+    if (!response.ok) {
+        throw new Error('Failed to load city list');
+    }
+
+    const data = await response.json();
+    const schedules = Array.isArray(data?.schedules) ? data.schedules : [];
+    const citySet = new Set();
+
+    schedules.forEach((schedule) => {
+        if (schedule?.originPort) {
+            citySet.add(String(schedule.originPort).trim());
+        }
+        if (schedule?.destinationPort) {
+            citySet.add(String(schedule.destinationPort).trim());
+        }
+    });
+
+    ADDITIONAL_PORTS.forEach((port) => citySet.add(port));
+
+    return Array.from(citySet).filter(Boolean).sort((first, second) => first.localeCompare(second));
+}
+
+function populateCitySelect(selectElement, cities, defaultLabel) {
+    const previousValue = selectElement.value;
+    selectElement.innerHTML = '';
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = defaultLabel;
+    selectElement.appendChild(defaultOption);
+
+    cities.forEach((city) => {
+        const option = document.createElement('option');
+        option.value = city;
+        option.textContent = city;
+        selectElement.appendChild(option);
+    });
+
+    if (previousValue && cities.includes(previousValue)) {
+        selectElement.value = previousValue;
+    }
+}
+
+async function initializeCityDropdowns() {
+    const originSelect = document.getElementById('origin');
+    const destinationSelect = document.getElementById('destination');
+
+    try {
+        const cities = await loadAvailableCities();
+        populateCitySelect(originSelect, cities, 'Select origin city');
+        populateCitySelect(destinationSelect, cities, 'Select destination city');
+    } catch (error) {
+        showError('Unable to load city list. You can refresh and try again.');
+        console.error('City list error:', error);
+    }
+}
+
+async function initializeEquipmentTypes() {
+    const select = document.getElementById('equipment-type');
+    const previousValue = select.value;
+
+    try {
+        const types = await API.equipment.getEquipmentTypes();
+        if (types && types.length > 0) {
+            select.innerHTML = '<option value="">Select equipment type</option>';
+            types.forEach((type) => {
+                const code = type.code || type;
+                const label = API.EQUIPMENT_TYPE_DISPLAY[code] || code;
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = label;
+                select.appendChild(option);
+            });
+            if (previousValue && [...select.options].some((o) => o.value === previousValue)) {
+                select.value = previousValue;
+            }
+            return;
+        }
+    } catch (e) {
+        console.warn('Could not load equipment types from API, using hardcoded fallback:', e.message);
+    }
+
+    select.innerHTML =
+        '<option value="">Select equipment type</option>' +
+        '<option value="20FT">20ft Standard</option>' +
+        '<option value="40FT">40ft Standard</option>' +
+        '<option value="40HC">40ft High Cube</option>';
+}
+
 document.getElementById('search-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     hideError();
@@ -103,8 +212,8 @@ function displaySchedules(schedules) {
         card.innerHTML = `
             <h4>${schedule.vesselName} (Voyage: ${schedule.voyageNumber})</h4>
             <div class="schedule-details">
-                <div><strong>Origin:</strong> ${schedule.originPort}</div>
-                <div><strong>Destination:</strong> ${schedule.destinationPort}</div>
+                <div><strong>Origin:</strong> ${displayPortName(schedule.originPort)}</div>
+                <div><strong>Destination:</strong> ${displayPortName(schedule.destinationPort)}</div>
                 <div><strong>ETD:</strong> ${formatDate(schedule.etd)}</div>
                 <div><strong>ETA:</strong> ${formatDate(schedule.eta)}</div>
                 <div><strong>Cut-off:</strong> ${formatDate(schedule.cutoffDate)}</div>
@@ -127,7 +236,7 @@ function selectSchedule(schedule, cardElement) {
         <div class="schedule-details">
             <div><strong>Vessel:</strong> ${schedule.vesselName}</div>
             <div><strong>Voyage:</strong> ${schedule.voyageNumber}</div>
-            <div><strong>Route:</strong> ${schedule.originPort} → ${schedule.destinationPort}</div>
+            <div><strong>Route:</strong> ${displayPortName(schedule.originPort)} → ${displayPortName(schedule.destinationPort)}</div>
             <div><strong>ETD:</strong> ${formatDate(schedule.etd)}</div>
             <div><strong>ETA:</strong> ${formatDate(schedule.eta)}</div>
         </div>
@@ -226,7 +335,7 @@ function displayConfirmation(confirmation) {
             <div style="text-align: left; margin-top: 2rem;">
                 <h3>Booking Summary</h3>
                 <p><strong>Vessel:</strong> ${state.selectedSchedule.vesselName}</p>
-                <p><strong>Route:</strong> ${state.selectedSchedule.originPort} → ${state.selectedSchedule.destinationPort}</p>
+                <p><strong>Route:</strong> ${displayPortName(state.selectedSchedule.originPort)} → ${displayPortName(state.selectedSchedule.destinationPort)}</p>
                 <p><strong>ETD:</strong> ${formatDate(state.selectedSchedule.etd)}</p>
                 <p><strong>Total Price:</strong> ${state.currentQuote.currency} ${state.currentQuote.totalPrice.toFixed(2)}</p>
             </div>
@@ -247,3 +356,5 @@ function resetApp() {
 }
 
 showSection('search');
+initializeCityDropdowns();
+initializeEquipmentTypes();

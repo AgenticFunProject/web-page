@@ -15,6 +15,7 @@ function displayPortName(port) {
 }
 
 const state = {
+    user: null,
     selectedSchedule: null,
     currentQuote: null
 };
@@ -177,6 +178,39 @@ async function initializeEquipmentTypes() {
         '<option value="40FT">40ft Standard</option>' +
         '<option value="40HC">40ft High Cube</option>';
 }
+
+async function handleLogin(email, password) {
+    const data = await API.users.login(email, password);
+    state.user = data.user;
+    TOKEN_STORE._token = data.token;
+    TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    document.getElementById('user-display-name').textContent = data.user.displayName || data.user.email;
+    document.getElementById('user-info').classList.remove('hidden');
+    showSection('search');
+}
+
+function handleLogout() {
+    state.user = null;
+    TOKEN_STORE._token = null;
+    TOKEN_STORE._expiresAt = 0;
+    document.getElementById('user-info').classList.add('hidden');
+    document.getElementById('login-form').reset();
+    showSection('login');
+}
+
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideError();
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    try {
+        await handleLogin(email, password);
+    } catch (error) {
+        showError(error.message);
+    }
+});
+
+document.getElementById('logout-btn').addEventListener('click', handleLogout);
 
 document.getElementById('search-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -352,9 +386,9 @@ function resetApp() {
     document.getElementById('booking-form').reset();
     document.getElementById('search-results').classList.add('hidden');
     document.getElementById('quote-result').classList.add('hidden');
-    showSection('search');
+    showSection(state.user ? 'search' : 'login');
 }
 
-showSection('search');
+showSection('login');
 initializeCityDropdowns();
 initializeEquipmentTypes();

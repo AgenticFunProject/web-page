@@ -8,13 +8,37 @@
 </head>
 <body>
     <header>
-        <h1>Customer Portal</h1>
-        <p class="subtitle">Book your shipping quickly and easily</p>
+        <div class="header-main">
+            <div>
+                <h1>Customer Portal</h1>
+                <p class="subtitle">Book your shipping quickly and easily</p>
+            </div>
+            <div id="user-info" class="user-info hidden">
+                <span id="user-display-name"></span>
+                <button id="logout-btn" class="btn btn-sm btn-secondary">Logout</button>
+            </div>
+        </div>
     </header>
 
     <main>
+        <!-- Step 0: Login -->
+        <section id="login-section" class="active">
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required placeholder="your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+        </section>
+
         <!-- Step 1: Search & Select Schedule -->
-        <section id="search-section" class="active">
+        <section id="search-section" class="hidden">
             <h2>Search Schedules</h2>
             <form id="search-form">
                 <div class="form-group">

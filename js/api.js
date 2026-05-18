@@ -432,11 +432,27 @@ const EquipmentsAPI = {
     },
 };
 
+const UsersAPI = {
+    async login(email, password) {
+        const res = await fetch(`${API_BASE_URL}/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            throw new Error(data.message || 'Login failed');
+        }
+        return data;
+    },
+};
+
 const API = {
     schedules: SchedulesAPI,
     quotes: QuotesAPI,
     booking: BookingAPI,
     equipment: EquipmentsAPI,
+    users: UsersAPI,
     mapEquipmentType,
     getQuoteEquipmentType,
     EQUIPMENT_TYPE_DISPLAY,

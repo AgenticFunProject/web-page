@@ -8,6 +8,7 @@ const app = express();
 
 const QUOTES_TARGET = process.env.QUOTES_URL || 'http://localhost:8000';
 const EQUIPMENT_TARGET = process.env.EQUIPMENT_URL || 'http://localhost:3000';
+const USERS_TARGET = process.env.USERS_URL || 'http://localhost:3001';
 const AUTH_SECRET = process.env.AUTH_JWT_SECRET || 'equipments-prod-dev-secret-change-me-2026';
 const AUTH_ISSUER = process.env.AUTH_JWT_ISSUER || 'platform-auth';
 const AUTH_AUDIENCE = process.env.AUTH_JWT_AUDIENCE || 'equipments-service';
@@ -50,6 +51,59 @@ app.post('/api/auth/quotes-token', express.json(), (req, res) => {
   res.json(buildTokenResponse(req.body, AUTH_QUOTES_AUDIENCE, QUOTES_DEFAULT_SCOPES));
 });
 
+async function proxyToUsers(method, path, body) {
+  return new Promise((resolve, reject) => {
+    const target = USERS;
+    const opts = {
+      hostname: target.hostname,
+      port: target.port,
+      path,
+      method,
+      headers: { 'content-type': 'application/json' },
+    };
+    delete opts.headers['host'];
+    const req = (target.protocol === 'https:' ? https : http).request(opts, (res) => {
+      let data = '';
+      res.on('data', (c) => (data += c));
+      res.on('end', () => {
+        try { resolve({ status: res.statusCode, body: JSON.parse(data) }); }
+        catch { resolve({ status: res.statusCode, body: data }); }
+      });
+    });
+    req.on('error', reject);
+    if (body) req.write(JSON.stringify(body));
+    req.end();
+  });
+}
+
+app.post('/api/auth/login', express.json(), async (req, res) => {
+  const { email, password } = req.body || {};
+  if (!email || !password) {
+    return res.status(400).json({ error: 'USER_VALIDATION', message: 'email and password are required' });
+  }
+
+  try {
+    const usersResp = await proxyToUsers('GET', `/users?email=${encodeURIComponent(email)}`);
+    const users = usersResp.body?.users;
+    if (!users || users.length === 0) {
+      return res.status(401).json({ error: 'USER_NOT_FOUND', message: 'Invalid email or password' });
+    }
+
+    const user = users[0];
+    const authResp = await proxyToUsers('POST', `/users/${user.id}/authenticate`, { password });
+
+    if (!authResp.body?.authenticated) {
+      return res.status(401).json({ error: 'AUTH_FAILED', message: 'Invalid email or password' });
+    }
+
+    const token = generateDevToken(user.id, AUTH_AUDIENCE, ['equipments:read', 'equipments:modify'], 480);
+    res.json({ token, user: { id: user.id, displayName: user.displayName, email: user.email } });
+  } catch (err) {
+    console.error('Login error:', err.message);
+    res.status(502).json({ error: 'UPSTREAM_UNAVAILABLE', message: 'Users service unavailable' });
+  }
+});
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
@@ -71,10 +125,12 @@ function parseTarget(url) {
 
 const QUOTES = parseTarget(QUOTES_TARGET);
 const EQUIPMENT = parseTarget(EQUIPMENT_TARGET);
+const USERS = parseTarget(USERS_TARGET);
 
 const TARGET_ROUTES = [
   { prefix: '/quotes', target: QUOTES, rewrite: (suffix) => '/quotes' + suffix },
   { prefix: '/equipment', target: EQUIPMENT, rewrite: (suffix) => suffix || '/' },
+  { prefix: '/users', target: USERS, rewrite: (suffix) => suffix || '/' },
 ];
 
 app.use('/api', (req, res) => {
@@ -117,6 +173,8 @@ app.listen(PORT, () => {
   console.log(`Gateway running on http://localhost:${PORT}`);
   console.log(`  /api/quotes   -> ${QUOTES_TARGET}/quotes`);
   console.log(`  /api/equipment -> ${EQUIPMENT_TARGET}`);
+  console.log(`  /api/users     -> ${USERS_TARGET}`);
   console.log(`  /api/auth/token -> local Equipments JWT generator`);
   console.log(`  /api/auth/quotes-token -> local Quotes JWT generator`);
+  console.log(`  /api/auth/login -> email+password → users service → JWT`);
 });

@@ -84,7 +84,7 @@ app.post('/api/auth/login', express.json(), async (req, res) => {
 
   try {
     const usersResp = await proxyToUsers('GET', `/users?email=${encodeURIComponent(email)}`);
-    const users = usersResp.body?.users;
+    const users = Array.isArray(usersResp.body) ? usersResp.body : usersResp.body?.users;
     if (!users || users.length === 0) {
       return res.status(401).json({ error: 'USER_NOT_FOUND', message: 'Invalid email or password' });
     }

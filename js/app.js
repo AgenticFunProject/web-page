@@ -187,15 +187,33 @@ async function handleLogin(email, password) {
     state.user = data.user;
     TOKEN_STORE._token = data.token;
     TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem('session', JSON.stringify({ token: data.token, user: data.user }));
     document.getElementById('user-display-name').textContent = data.user.displayName || data.user.email;
     document.getElementById('user-info').classList.remove('hidden');
     showSection('search');
+}
+
+function restoreSession() {
+    const saved = localStorage.getItem('session');
+    if (!saved) return false;
+    try {
+        const { token, user } = JSON.parse(saved);
+        if (!token || !user) return false;
+        state.user = user;
+        TOKEN_STORE._token = token;
+        TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
+        document.getElementById('user-display-name').textContent = user.displayName || user.email;
+        document.getElementById('user-info').classList.remove('hidden');
+        showSection('search');
+        return true;
+    } catch { return false; }
 }
 
 function handleLogout() {
     state.user = null;
     TOKEN_STORE._token = null;
     TOKEN_STORE._expiresAt = 0;
+    localStorage.removeItem('session');
     document.getElementById('user-info').classList.add('hidden');
     document.getElementById('login-form').reset();
     showSection('login');
@@ -393,6 +411,6 @@ function resetApp() {
     showSection(state.user ? 'search' : 'login');
 }
 
-showSection('login');
 initializeCityDropdowns();
 initializeEquipmentTypes();
+if (!restoreSession()) showSection('login');

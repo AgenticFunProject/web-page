@@ -361,10 +361,11 @@ document.getElementById('booking-form').addEventListener('submit', async (e) => 
 });
 
 function displayConfirmation(confirmation) {
+    const ref = confirmation.bookingReference || confirmation.referenceNumber || confirmation.id;
     document.getElementById('confirmation-details').innerHTML = `
         <div class="confirmation">
             <p class="status">✓ Booking ${confirmation.status}</p>
-            <div class="ref-number">${confirmation.referenceNumber}</div>
+            <div class="ref-number">${ref}</div>
             <p>Thank you for your booking!</p>
             <div style="text-align: left; margin-top: 2rem;">
                 <h3>Booking Summary</h3>

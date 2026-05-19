@@ -309,13 +309,31 @@ const QuotesAPI = {
 
 const BookingAPI = {
     async submit(bookingData) {
+        const body = {
+            customerId: bookingData.customerId || 1,
+            scheduleId: bookingData.scheduleId,
+            quoteId: bookingData.quoteId,
+            customer: {
+                name: bookingData.contactName,
+                email: bookingData.contactEmail,
+                phone: bookingData.contactPhone,
+            },
+            cargo: {
+                description: bookingData.cargoDescription,
+                weightKg: Number(bookingData.cargoWeight) || 0,
+            },
+            equipment: [
+                { type: bookingData.equipmentType, quantity: Number(bookingData.quantity) || 1 }
+            ],
+        };
         const response = await fetch(`${API_BASE_URL}/bookings`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(bookingData)
+            body: JSON.stringify(body)
         });
         if (!response.ok) {
-            throw new Error(`Failed to submit booking: ${response.statusText}`);
+            const err = await response.json().catch(() => ({ message: response.statusText }));
+            throw new Error(err.message || `Booking failed: ${response.status}`);
         }
         return response.json();
     }

@@ -9,6 +9,7 @@ const app = express();
 const QUOTES_TARGET = process.env.QUOTES_URL || 'http://localhost:8000';
 const EQUIPMENT_TARGET = process.env.EQUIPMENT_URL || 'http://localhost:3000';
 const USERS_TARGET = process.env.USERS_URL || 'http://localhost:3001';
+const BOOKING_TARGET = process.env.BOOKING_URL || 'http://localhost:8081';
 const AUTH_SECRET = process.env.AUTH_JWT_SECRET || 'equipments-prod-dev-secret-change-me-2026';
 const AUTH_ISSUER = process.env.AUTH_JWT_ISSUER || 'platform-auth';
 const AUTH_AUDIENCE = process.env.AUTH_JWT_AUDIENCE || 'equipments-service';
@@ -126,11 +127,13 @@ function parseTarget(url) {
 const QUOTES = parseTarget(QUOTES_TARGET);
 const EQUIPMENT = parseTarget(EQUIPMENT_TARGET);
 const USERS = parseTarget(USERS_TARGET);
+const BOOKING = parseTarget(BOOKING_TARGET);
 
 const TARGET_ROUTES = [
   { prefix: '/quotes', target: QUOTES, rewrite: (suffix) => '/quotes' + suffix },
   { prefix: '/equipment', target: EQUIPMENT, rewrite: (suffix) => suffix || '/' },
   { prefix: '/users', target: USERS, rewrite: (suffix) => suffix || '/' },
+  { prefix: '/bookings', target: BOOKING, rewrite: (suffix) => '/api/v1/bookings' + suffix },
 ];
 
 app.use('/api', (req, res) => {
@@ -174,6 +177,7 @@ app.listen(PORT, () => {
   console.log(`  /api/quotes   -> ${QUOTES_TARGET}/quotes`);
   console.log(`  /api/equipment -> ${EQUIPMENT_TARGET}`);
   console.log(`  /api/users     -> ${USERS_TARGET}`);
+  console.log(`  /api/bookings  -> ${BOOKING_TARGET}/api/v1/bookings`);
   console.log(`  /api/auth/token -> local Equipments JWT generator`);
   console.log(`  /api/auth/quotes-token -> local Quotes JWT generator`);
   console.log(`  /api/auth/login -> email+password → users service → JWT`);

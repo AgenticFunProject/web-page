@@ -1,1 +1,13 @@
-{"version":1,"rigs":{"myproject":{"git_url":"git@github.com:AgenticFunProject/web-page.git","added_at":"2026-05-14T17:54:02.200648803+02:00","beads":{"repo":"","prefix":"wp"}}}}
+{
+  "version": 1,
+  "rigs": {
+    "myproject": {
+      "git_url": "git@github.com:AgenticFunProject/web-page.git",
+      "added_at": "2026-05-12T13:36:32.200648803+02:00",
+      "beads": {
+        "repo": "",
+        "prefix": "wp"
+      }
+    }
+  }
+}

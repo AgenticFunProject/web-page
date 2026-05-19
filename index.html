@@ -27,7 +27,8 @@
             <form id="login-form">
                 <div class="form-group">
                     <label for="login-email">Email</label>
-                    <input type="email" id="login-email" name="email" required placeholder="you@example.com" pattern="[^@]+@[^@]+\.[^@]{2,}">
+                    <input type="email" id="login-email" name="email" list="suggest-login-email" required placeholder="you@example.com" pattern="[^@]+@[^@]+\.[^@]{2,}">
+                    <datalist id="suggest-login-email"></datalist>
                 </div>
                 <div class="form-group">
                     <label for="login-password">Password</label>
@@ -102,15 +103,18 @@
                 <h3>Contact Details</h3>
                 <div class="form-group">
                     <label for="contact-name">Full Name</label>
-                    <input type="text" id="contact-name" name="contactName" required>
+                    <input type="text" id="contact-name" name="contactName" list="suggest-contact-name" required>
+                    <datalist id="suggest-contact-name"></datalist>
                 </div>
                 <div class="form-group">
                     <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="contactEmail" required pattern="[^@]+@[^@]+\.[^@]{2,}">
+                    <input type="email" id="contact-email" name="contactEmail" list="suggest-contact-email" required pattern="[^@]+@[^@]+\.[^@]{2,}">
+                    <datalist id="suggest-contact-email"></datalist>
                 </div>
                 <div class="form-group">
                     <label for="contact-phone">Phone</label>
-                    <input type="tel" id="contact-phone" name="contactPhone" required>
+                    <input type="tel" id="contact-phone" name="contactPhone" list="suggest-contact-phone" required>
+                    <datalist id="suggest-contact-phone"></datalist>
                 </div>
                 <h3>Cargo Details</h3>
                 <div class="form-group">

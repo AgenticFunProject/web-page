@@ -20,6 +20,21 @@ const state = {
     currentQuote: null
 };
 
+function populateDatalist(datalistId, storageKey) {
+    const datalist = document.getElementById(datalistId);
+    const items = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    datalist.innerHTML = items.map(v => `<option value="${v.replace(/"/g, '&quot;')}">`).join('');
+}
+
+function saveSuggestion(storageKey, value) {
+    if (!value) return;
+    let list = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    list = list.filter(v => v !== value);
+    list.unshift(value);
+    if (list.length > 5) list = list.slice(0, 5);
+    localStorage.setItem(storageKey, JSON.stringify(list));
+}
+
 function showSection(section) {
     document.querySelectorAll('main section').forEach(s => {
         s.classList.add('hidden');
@@ -29,18 +44,9 @@ function showSection(section) {
     target.classList.remove('hidden');
     target.classList.add('active');
     if (section === 'booking') {
-        const saved = localStorage.getItem('bookingFormData');
-        if (saved) {
-            try {
-                const { contactName, contactEmail, contactPhone } = JSON.parse(saved);
-                if (contactName) document.getElementById('contact-name').value = contactName;
-                if (contactEmail) document.getElementById('contact-email').value = contactEmail;
-                if (contactPhone) document.getElementById('contact-phone').value = contactPhone;
-            } catch {}
-        }
-        if (state.user?.email) {
-            document.getElementById('contact-email').value = state.user.email;
-        }
+        populateDatalist('suggest-contact-name', 'suggest:contact-name');
+        populateDatalist('suggest-contact-email', 'suggest:contact-email');
+        populateDatalist('suggest-contact-phone', 'suggest:contact-phone');
     }
     hideError();
 }
@@ -199,7 +205,7 @@ async function handleLogin(email, password) {
     TOKEN_STORE._token = data.token;
     TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
     localStorage.setItem('session', JSON.stringify({ token: data.token, user: data.user }));
-    localStorage.setItem('loginEmail', email);
+    saveSuggestion('suggest:login-email', email);
     document.getElementById('user-display-name').textContent = data.user.displayName || data.user.email;
     document.getElementById('user-info').classList.remove('hidden');
     showSection('search');
@@ -383,12 +389,10 @@ document.getElementById('booking-form').addEventListener('submit', async (e) => 
         quantity: parseInt(document.getElementById('quantity').value),
         cargoWeight: parseInt(document.getElementById('cargo-weight').value)
     };
-    localStorage.setItem('bookingFormData', JSON.stringify({
-        contactName: bookingData.contactName,
-        contactEmail: bookingData.contactEmail,
-        contactPhone: bookingData.contactPhone
-    }));
-    
+    saveSuggestion('suggest:contact-name', bookingData.contactName);
+    saveSuggestion('suggest:contact-email', bookingData.contactEmail);
+    saveSuggestion('suggest:contact-phone', bookingData.contactPhone);
+
     try {
         const confirmation = await API.booking.submit(bookingData);
         displayConfirmation(confirmation);
@@ -430,6 +434,5 @@ function resetApp() {
 
 initializeCityDropdowns();
 initializeEquipmentTypes();
-const savedEmail = localStorage.getItem('loginEmail');
-if (savedEmail) document.getElementById('login-email').value = savedEmail;
+populateDatalist('suggest-login-email', 'suggest:login-email');
 if (!restoreSession()) showSection('login');

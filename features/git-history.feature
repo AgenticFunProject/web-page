@@ -140,3 +140,12 @@ Feature: Gateway Development History
     When commit 6b6635f was created
     Then 5 feature files were added covering 95+ scenarios
     And the specs covered schedules, quotes, equipments, users, and booking
+
+  Scenario: Add Playwright E2E test suite
+    Given no executable end-to-end tests existed
+    When commit 86bb3f7 was created
+    Then Playwright was installed with chromium
+    And e2e/flows.spec.js was created with tests for login, search, quote, booking, logout, datalist, and readonly behaviors
+    And a playwright.config.js targets the deployed gateway URL
+    And the test:e2e script was added to package.json
+    And new commits must be described as Gherkin scenarios in git-history.feature before pushing

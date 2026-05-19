@@ -250,6 +250,7 @@ function handleLogout() {
     TOKEN_STORE._token = null;
     TOKEN_STORE._expiresAt = 0;
     localStorage.removeItem('session');
+    document.getElementById('user-display-name').textContent = '';
     document.getElementById('user-info').classList.add('hidden');
     document.getElementById('login-form').reset();
     showSection('login');

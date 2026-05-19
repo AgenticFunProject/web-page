@@ -28,6 +28,9 @@ function showSection(section) {
     const target = document.getElementById(`${section}-section`);
     target.classList.remove('hidden');
     target.classList.add('active');
+    if (section === 'booking' && state.user?.email) {
+        document.getElementById('contact-email').value = state.user.email;
+    }
     hideError();
 }
 

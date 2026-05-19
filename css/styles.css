@@ -62,6 +62,8 @@ section {
     margin-bottom: 2rem;
 }
 
+.hidden { display: none !important; }
+
 section.hidden {
     display: none;
 }

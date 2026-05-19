@@ -167,7 +167,11 @@ app.use('/api', (req, res) => {
   req.pipe(proxyReq);
 });
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname), {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.json')) res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+}));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });

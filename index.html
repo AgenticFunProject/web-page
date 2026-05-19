@@ -27,7 +27,7 @@
             <form id="login-form">
                 <div class="form-group">
                     <label for="login-email">Email</label>
-                    <input type="email" id="login-email" name="email" required placeholder="you@example.com">
+                    <input type="email" id="login-email" name="email" required placeholder="you@example.com" pattern="[^@]+@[^@]+\.[^@]{2,}">
                 </div>
                 <div class="form-group">
                     <label for="login-password">Password</label>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="contactEmail" required>
+                    <input type="email" id="contact-email" name="contactEmail" required pattern="[^@]+@[^@]+\.[^@]{2,}">
                 </div>
                 <div class="form-group">
                     <label for="contact-phone">Phone</label>

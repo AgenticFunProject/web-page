@@ -77,15 +77,25 @@ function buildSyntheticSchedules(origin, destination, dateFrom, dateTo) {
         ? new Date(Date.UTC(2026, 4, 20, 8, 0, 0))
         : new Date(Date.UTC(fromDate.getUTCFullYear(), fromDate.getUTCMonth(), fromDate.getUTCDate(), 8, 0, 0));
 
+    const SYNTHETIC_VESSELS = [
+        { name: "Ever Given", prefix: "EG" },
+        { name: "MSC Irina", prefix: "MI" },
+        { name: "Maersk Mc-Kinney", prefix: "MM" },
+        { name: "CMA CGM Jacques Saade", prefix: "CJ" },
+        { name: "HMM Algeciras", prefix: "HA" },
+        { name: "ONE Triton", prefix: "OT" }
+    ];
+
     return Array.from({ length: 3 }, (_, index) => {
         const etd = new Date(startDate.getTime() + index * 3 * 24 * 60 * 60 * 1000);
         const eta = new Date(etd.getTime() + (9 + index * 2) * 24 * 60 * 60 * 1000);
         const cutoffDate = new Date(etd.getTime() - 2 * 24 * 60 * 60 * 1000);
+        const vessel = SYNTHETIC_VESSELS[index % SYNTHETIC_VESSELS.length];
 
         return {
             id: `synthetic-${normalizedOrigin}-${normalizedDestination}-${index + 1}`,
-            vesselName: `Demo Vessel ${index + 1}`,
-            voyageNumber: `DM-${etd.getUTCFullYear()}-${String(index + 1).padStart(3, '0')}`,
+            vesselName: vessel.name,
+            voyageNumber: `${vessel.prefix}-${etd.getUTCFullYear()}-${String(index + 1).padStart(3, '0')}W`,
             originPort: origin || normalizedOrigin.replace(/\b\w/g, (char) => char.toUpperCase()),
             destinationPort: destination || normalizedDestination.replace(/\b\w/g, (char) => char.toUpperCase()),
             etd: etd.toISOString(),

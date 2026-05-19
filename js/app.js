@@ -35,6 +35,24 @@ function saveSuggestion(storageKey, value) {
     localStorage.setItem(storageKey, JSON.stringify(list));
 }
 
+function migrateOldSuggestions() {
+    const oldEmail = localStorage.getItem('loginEmail');
+    if (oldEmail) {
+        saveSuggestion('suggest:login-email', oldEmail);
+        localStorage.removeItem('loginEmail');
+    }
+    const oldBooking = localStorage.getItem('bookingFormData');
+    if (oldBooking) {
+        try {
+            const { contactName, contactEmail, contactPhone } = JSON.parse(oldBooking);
+            if (contactName) saveSuggestion('suggest:contact-name', contactName);
+            if (contactEmail) saveSuggestion('suggest:contact-email', contactEmail);
+            if (contactPhone) saveSuggestion('suggest:contact-phone', contactPhone);
+        } catch {}
+        localStorage.removeItem('bookingFormData');
+    }
+}
+
 function showSection(section) {
     document.querySelectorAll('main section').forEach(s => {
         s.classList.add('hidden');
@@ -434,5 +452,6 @@ function resetApp() {
 
 initializeCityDropdowns();
 initializeEquipmentTypes();
+migrateOldSuggestions();
 populateDatalist('suggest-login-email', 'suggest:login-email');
 if (!restoreSession()) showSection('login');

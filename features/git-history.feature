@@ -160,6 +160,14 @@ Feature: Gateway Development History
     And SchedulesAPI.search() maps cargoCutOff to cutoffDate in responses
     And getScheduleById() tries the live API before falling back to mock data
 
+  Scenario: Fix CNSHA→DEHAM quote stub ID and add BRSSZ→USLAX stub
+    Given the CNSHA→DEHAM stub in js/api.js used a wrong UUID suffix not matching the quotes service seed
+    And BRSSZ→USLAX was a third quotes-service-seeded route with no frontend stub
+    When commit <next-sha> was created
+    Then QUOTES_SCHEDULE_STUBS in js/api.js was corrected to 7a59721c-cd5d-4d9f-86a0-9aa9f7f6c47b for CNSHA→DEHAM
+    And a new stub for BRSSZ→USLAX with id 1ce1ab21-9d58-4a6d-b867-afc93098352f was added
+    And all three quote-seeded schedule IDs were seeded as OPEN in the schedules service
+
   Scenario: Inject schedules JWT from gateway proxy
     Given the schedules service requires Bearer auth with HS256 JWT
     And the gateway proxy forwarded requests without an Authorization header

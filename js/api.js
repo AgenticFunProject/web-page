@@ -44,14 +44,24 @@ const QUOTES_SCHEDULE_STUBS = [
         cutoffDate: '2026-08-16T08:00:00Z'
     },
     {
-        id: '7a59721c-a45e-4d4d-b3cb-b4af65435274',
+        id: '7a59721c-cd5d-4d9f-86a0-9aa9f7f6c47b',
         originPort: 'CNSHA',
         destinationPort: 'DEHAM',
         vesselName: 'Cosco Shanghai',
-        voyageNumber: 'SHA-2026-002',
+        voyageNumber: 'SHA-2026-004',
         etd: '2026-06-05T08:00:00Z',
         eta: '2026-06-20T08:00:00Z',
         cutoffDate: '2026-06-03T08:00:00Z'
+    },
+    {
+        id: '1ce1ab21-9d58-4a6d-b867-afc93098352f',
+        originPort: 'BRSSZ',
+        destinationPort: 'USLAX',
+        vesselName: 'Maersk Sao Paulo',
+        voyageNumber: 'SSZ-2026-001',
+        etd: '2026-07-12T08:00:00Z',
+        eta: '2026-07-28T08:00:00Z',
+        cutoffDate: '2026-07-10T08:00:00Z'
     }
 ];
 

@@ -149,3 +149,13 @@ Feature: Gateway Development History
     And a playwright.config.js targets the deployed gateway URL
     And the test:e2e script was added to package.json
     And new commits must be described as Gherkin scenarios in git-history.feature before pushing
+
+  # --- Session 6: Schedules Integration ---
+
+  Scenario: Replace mock schedules with live Azure schedules service
+    Given the app used QUOTES_SCHEDULE_STUBS and mock/db.json for schedule data
+    When commit add-schedules-integration was created
+    Then /api/schedules proxy route was added to server.js pointing to app-schedules-prod-9e31c1
+    And SchedulesAPI.search() now maps query params (originPort, destinationPort, departureDateFrom, departureDateTo)
+    And SchedulesAPI.search() maps cargoCutOff to cutoffDate in responses
+    And getScheduleById() tries the live API before falling back to mock data

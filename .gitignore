@@ -111,3 +111,17 @@ backup_pre_flatten_*/
 .DS_Store
 .vscode/
 .idea/
+
+# Embedded repos / generated artifacts
+.beads/
+booking/
+db.sqlite
+deacon/
+myproject/
+plugins/
+web-page/
+logs/
+.dolt-data/
+.runtime/
+daemon/
+

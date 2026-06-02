@@ -1,4 +1,24 @@
 const API_BASE_URL = '/api';
+const QUOTE_SOURCE_STORAGE_KEY = 'quote-source-mode';
+const QUOTE_SOURCE = {
+    AZURE: 'azure',
+    MOCK: 'mock'
+};
+
+function isValidQuoteSource(value) {
+    return value === QUOTE_SOURCE.AZURE || value === QUOTE_SOURCE.MOCK;
+}
+
+function loadStoredQuoteSource() {
+    try {
+        const storedValue = window.localStorage.getItem(QUOTE_SOURCE_STORAGE_KEY);
+        return isValidQuoteSource(storedValue) ? storedValue : QUOTE_SOURCE.AZURE;
+    } catch (error) {
+        return QUOTE_SOURCE.AZURE;
+    }
+}
+
+let currentQuoteSource = loadStoredQuoteSource();
 
 const PORT_ALIASES = {
     SGSIN: 'singapore',
@@ -156,14 +176,24 @@ const SchedulesAPI = {
     async search(origin, destination, dateFrom, dateTo) {
         try {
             const params = new URLSearchParams({
-                origin,
-                destination,
-                dateFrom,
-                dateTo
+                originPort: origin,
+                destinationPort: destination,
+                departureDateFrom: dateFrom,
+                departureDateTo: dateTo
             });
             const response = await fetch(`${API_BASE_URL}/schedules?${params}`);
             if (response.ok) {
-                return response.json();
+                const schedules = await response.json();
+                return (schedules || []).map(s => ({
+                    id: s.id,
+                    vesselName: s.vesselName,
+                    voyageNumber: s.voyageNumber,
+                    originPort: s.originPort,
+                    destinationPort: s.destinationPort,
+                    etd: s.etd,
+                    eta: s.eta,
+                    cutoffDate: s.cargoCutOff
+                }));
             }
             return await loadMockSchedules(origin, destination, dateFrom, dateTo);
         } catch (error) {
@@ -206,6 +236,30 @@ function isPeakSeason(etd) {
 }
 
 async function getScheduleById(scheduleId) {
+    const stubSchedule = QUOTES_SCHEDULE_STUBS.find((schedule) => schedule.id === scheduleId);
+    if (stubSchedule) {
+        return stubSchedule;
+    }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/schedules/${scheduleId}`);
+        if (response.ok) {
+            const s = await response.json();
+            return {
+                id: s.id,
+                vesselName: s.vesselName,
+                voyageNumber: s.voyageNumber,
+                originPort: s.originPort,
+                destinationPort: s.destinationPort,
+                etd: s.etd,
+                eta: s.eta,
+                cutoffDate: s.cargoCutOff
+            };
+        }
+    } catch (e) {
+        // fall through to mock
+    }
+
     const response = await fetch('/mock/db.json');
     if (!response.ok) {
         return null;
@@ -218,7 +272,8 @@ async function getScheduleById(scheduleId) {
 async function mockComputeQuote(scheduleId, equipmentType, quantity, cargoWeight) {
     const normalizedQuantity = Number.isFinite(Number(quantity)) ? Math.max(1, Number(quantity)) : 1;
     const normalizedWeight = Number.isFinite(Number(cargoWeight)) ? Math.max(0, Number(cargoWeight)) : 0;
-    const baseRate = BASE_RATE_USD[equipmentType] || BASE_RATE_USD['20ft'];
+    const mappedEquipmentType = mapEquipmentType(equipmentType);
+    const baseRate = BASE_RATE_USD[mappedEquipmentType] || BASE_RATE_USD['20ft'];
 
     const schedule = await getScheduleById(scheduleId);
     const destinationPort = schedule?.destinationPort || '';
@@ -252,7 +307,7 @@ async function mockComputeQuote(scheduleId, equipmentType, quantity, cargoWeight
             surcharges
         },
         lineItems: [
-            { description: `Ocean Freight - ${equipmentType} x ${normalizedQuantity}`, amount: freight },
+            { description: `Ocean Freight - ${mappedEquipmentType} x ${normalizedQuantity}`, amount: freight },
             { description: 'Bunker Adjustment Factor (BAF)', amount: baf },
             { description: `Port Congestion Surcharge - Destination ${destinationPort || 'N/A'}`, amount: portCongestion },
             { description: 'Weight Handling Surcharge', amount: weightSurcharge },
@@ -286,34 +341,51 @@ function mapQuoteResponse(payload) {
 }
 
 const QuotesAPI = {
-    async getQuote(scheduleId, equipmentType, quantity, cargoWeight) {
-        const quotesApiType = getQuoteEquipmentType(equipmentType) || '20FT';
+    getQuoteSource() {
+        return currentQuoteSource;
+    },
+
+    getQuoteSourceLabel(source = currentQuoteSource) {
+        return source === QUOTE_SOURCE.MOCK ? 'Mocked (GitHub-based)' : 'Azure service';
+    },
+
+    setQuoteSource(source) {
+        currentQuoteSource = isValidQuoteSource(source) ? source : QUOTE_SOURCE.AZURE;
 
         try {
-            const response = await fetch(`${API_BASE_URL}/quotes`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    scheduleId: scheduleId,
-                    equipment: [{ type: quotesApiType, quantity: Number(quantity) || 1 }],
-                    cargoWeightKg: Number(cargoWeight) || 0
-                })
-            });
-
-            if (response.ok) {
-                const payload = await response.json();
-                return mapQuoteResponse(payload);
-            }
-
-            if (response.status === 400) {
-                const errorBody = await response.json().catch(() => ({}));
-                console.warn('Quotes API returned 400, falling back to mock:', errorBody.detail || errorBody);
-            }
+            window.localStorage.setItem(QUOTE_SOURCE_STORAGE_KEY, currentQuoteSource);
         } catch (error) {
-            console.warn('Quotes API unavailable, falling back to mock:', error.message);
+            console.warn('Could not persist quote source preference:', error.message);
         }
 
-        return mockComputeQuote(scheduleId, equipmentType, quantity, cargoWeight);
+        return currentQuoteSource;
+    },
+
+    async getQuote(scheduleId, equipmentType, quantity, cargoWeight) {
+        if (currentQuoteSource === QUOTE_SOURCE.MOCK) {
+            return mockComputeQuote(scheduleId, equipmentType, quantity, cargoWeight);
+        }
+
+        const quotesApiType = getQuoteEquipmentType(equipmentType) || '20FT';
+
+        const response = await fetch(`${API_BASE_URL}/quotes`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                scheduleId: scheduleId,
+                equipment: [{ type: quotesApiType, quantity: Number(quantity) || 1 }],
+                cargoWeightKg: Number(cargoWeight) || 0
+            })
+        });
+
+        if (!response.ok) {
+            const errorBody = await response.json().catch(() => ({}));
+            const detail = errorBody.detail || errorBody.error || response.statusText || 'Quotes API request failed';
+            throw new Error(`Quotes API request failed: ${detail}`);
+        }
+
+        const payload = await response.json();
+        return mapQuoteResponse(payload);
     }
 };
 

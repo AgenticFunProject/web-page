@@ -48,6 +48,59 @@ header h1 {
     font-size: 1.1rem;
 }
 
+.quote-source-switch {
+    margin: 1.5rem auto 0;
+    max-width: 32rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.quote-source-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.quote-source-options {
+    display: inline-flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quote-source-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    cursor: pointer;
+}
+
+.quote-source-option input {
+    margin: 0;
+    accent-color: #8bd3ff;
+}
+
+.quote-source-option:has(input:checked) {
+    background: rgba(139, 211, 255, 0.2);
+    border-color: rgba(139, 211, 255, 0.65);
+}
+
+.quote-source-description {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
 main {
     max-width: 800px;
     margin: 2rem auto;
@@ -279,6 +332,15 @@ footer {
     .date-range {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .quote-source-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quote-source-option {
+        justify-content: center;
     }
     
     .schedule-details {

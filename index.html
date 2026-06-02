@@ -8,38 +8,27 @@
 </head>
 <body>
     <header>
-        <div class="header-main">
-            <div>
-                <h1>Customer Portal</h1>
-                <p class="subtitle">Book your shipping quickly and easily</p>
+        <h1>Customer Portal</h1>
+        <p class="subtitle">Book your shipping quickly and easily</p>
+        <div class="quote-source-switch" aria-label="Quote source selector">
+            <span class="quote-source-label">Quote source</span>
+            <div class="quote-source-options" role="radiogroup" aria-label="Quote source">
+                <label class="quote-source-option">
+                    <input type="radio" name="quote-source" value="azure">
+                    <span>Azure service</span>
+                </label>
+                <label class="quote-source-option">
+                    <input type="radio" name="quote-source" value="mock">
+                    <span>Mocked (GitHub-based)</span>
+                </label>
             </div>
-            <div id="user-info" class="user-info hidden">
-                <span id="user-display-name"></span>
-                <button id="logout-btn" class="btn btn-sm btn-secondary">Logout</button>
-            </div>
+            <p id="quote-source-description" class="quote-source-description"></p>
         </div>
     </header>
 
     <main>
-        <!-- Step 0: Login -->
-        <section id="login-section" class="active">
-            <h2>Sign In</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" name="email" list="suggest-login-email" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" required placeholder="you@example.com" pattern="[^@]+@[^@]+\.[^@]{2,}">
-                    <datalist id="suggest-login-email"></datalist>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" name="password" autocomplete="new-password" required placeholder="your password">
-                </div>
-                <button type="submit" class="btn btn-primary">Sign In</button>
-            </form>
-        </section>
-
         <!-- Step 1: Search & Select Schedule -->
-        <section id="search-section" class="hidden">
+        <section id="search-section" class="active">
             <h2>Search Schedules</h2>
             <form id="search-form">
                 <div class="form-group">
@@ -103,18 +92,15 @@
                 <h3>Contact Details</h3>
                 <div class="form-group">
                     <label for="contact-name">Full Name</label>
-                    <input type="text" id="contact-name" name="contactName" list="suggest-contact-name" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" required>
-                    <datalist id="suggest-contact-name"></datalist>
+                    <input type="text" id="contact-name" name="contactName" required>
                 </div>
                 <div class="form-group">
                     <label for="contact-email">Email</label>
-                    <input type="email" id="contact-email" name="contactEmail" list="suggest-contact-email" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" required pattern="[^@]+@[^@]+\.[^@]{2,}">
-                    <datalist id="suggest-contact-email"></datalist>
+                    <input type="email" id="contact-email" name="contactEmail" required>
                 </div>
                 <div class="form-group">
                     <label for="contact-phone">Phone</label>
-                    <input type="tel" id="contact-phone" name="contactPhone" list="suggest-contact-phone" autocomplete="off" readonly onfocus="this.removeAttribute('readonly')" required>
-                    <datalist id="suggest-contact-phone"></datalist>
+                    <input type="tel" id="contact-phone" name="contactPhone" required>
                 </div>
                 <h3>Cargo Details</h3>
                 <div class="form-group">

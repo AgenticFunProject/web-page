@@ -11,6 +11,7 @@ const EQUIPMENT_TARGET = process.env.EQUIPMENT_URL || 'http://localhost:3000';
 const USERS_TARGET = process.env.USERS_URL || 'http://localhost:3001';
 const BOOKING_TARGET = process.env.BOOKING_URL || 'http://localhost:8081';
 const SCHEDULES_TARGET = process.env.SCHEDULES_URL || 'https://app-schedules-prod-9e31c1.azurewebsites.net';
+const SCHEDULES_AUTH_SECRET = process.env.SCHEDULES_AUTH_JWT_SECRET || 'dev-secret-do-not-use-in-production';
 const AUTH_SECRET = process.env.AUTH_JWT_SECRET || 'equipments-prod-dev-secret-change-me-2026';
 const AUTH_ISSUER = process.env.AUTH_JWT_ISSUER || 'platform-auth';
 const AUTH_AUDIENCE = process.env.AUTH_JWT_AUDIENCE || 'equipments-service';
@@ -31,6 +32,25 @@ function generateDevToken(subject, audience, scopes, expiresInMinutes) {
     scope: scopes.join(' '),
   })).toString('base64url');
   const signature = crypto.createHmac('sha256', AUTH_SECRET)
+    .update(`${header}.${payload}`)
+    .digest('base64url');
+  return `${header}.${payload}.${signature}`;
+}
+
+function generateSchedulesToken(method) {
+  const scope = ['GET', 'HEAD', 'OPTIONS'].includes(method.toUpperCase())
+    ? 'schedules:read'
+    : 'schedules:read schedules:modify';
+  const header = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'JWT' })).toString('base64url');
+  const now = Math.floor(Date.now() / 1000);
+  const payload = Buffer.from(JSON.stringify({
+    sub: 'gateway',
+    iss: 'schedules-service',
+    aud: 'schedules-api',
+    exp: now + 60,
+    scope,
+  })).toString('base64url');
+  const signature = crypto.createHmac('sha256', SCHEDULES_AUTH_SECRET)
     .update(`${header}.${payload}`)
     .digest('base64url');
   return `${header}.${payload}.${signature}`;
@@ -158,6 +178,10 @@ app.use('/api', (req, res) => {
     headers: { ...req.headers },
   };
   delete options.headers['host'];
+
+  if (route.prefix === '/schedules') {
+    options.headers['authorization'] = 'Bearer ' + generateSchedulesToken(req.method);
+  }
 
   const proxyReq = (target.protocol === 'https:' ? https : http).request(options, (proxyRes) => {
     res.writeHead(proxyRes.statusCode, proxyRes.headers);

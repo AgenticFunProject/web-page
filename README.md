@@ -10,7 +10,7 @@ This project is a static single-page shipping booking demo. It runs directly fro
 Current behavior
 ----------------
 - Schedule search first tries `/api/schedules` and falls back to local mock data.
-- Quote generation first tries `/api/quotes` and falls back to local browser-side quote calculation.
+- Quote generation uses the frontend quote-source switch so you can explicitly choose the Azure service or the mocked demo flow.
 - API failures are surfaced with user-friendly error messages.
 - Mock schedule data includes capital-city coverage and synthetic schedule generation for unmatched demo searches.
 
@@ -18,39 +18,23 @@ Quick start
 -----------
 1. Open a terminal in the project:
 
-   cd web-page
+   cd mayor
 
-2. Start the local gateway and static server:
+2. Start a local static server:
 
-   npm install
-   npm run dev
+   python3 -m http.server 8080 --directory .
 
 3. Open the app:
 
-   http://localhost:4000
+   http://localhost:8080
 
 Notes
 -----
-- `npm run dev` starts `server.js`, serves the static app, and proxies `/api/quotes` and `/api/equipment`.
-- The static app still has local fallbacks for schedules and quote generation when backend APIs are unavailable.
+- This repo currently does not include a working `package.json`, so `npm run dev` and `npm run dev:all` are not the correct startup path here.
+- Quotes now default to the Azure service at `https://app-quotes-dev-b8d336.azurewebsites.net` (override with `QUOTES_URL` if needed).
+- The selected quote source is persisted in the browser so the UI keeps your last Azure/mock choice.
+- The static server is enough for the demo flow because schedules and quotes have local fallbacks.
 - Booking submission still expects an API unless additional offline booking fallback logic is added.
-
-Local dev tokens
-----------------
-The gateway can mint HS256 JWTs for local backend smoke testing. Both endpoints accept optional `subject`, `scopes`, and `expiresInMinutes` JSON fields.
-
-- `POST /api/auth/token` returns an Equipments-audience token with default audience `equipments-service` and scopes `equipments:read equipments:modify`.
-- `POST /api/auth/quotes-token` returns a Quotes-audience token with default audience `quotes-service` and scopes `quotes:admin quotes:approve`.
-
-Example:
-
-```bash
-curl -s http://localhost:4000/api/auth/quotes-token \
-  -H 'Content-Type: application/json' \
-  -d '{"subject":"local-quotes-admin"}'
-```
-
-Use `AUTH_JWT_SECRET`, `AUTH_JWT_ISSUER`, `AUTH_JWT_AUDIENCE`, and `AUTH_QUOTES_JWT_AUDIENCE` to override local JWT values. This is only a local developer helper, not production identity-provider behavior.
 
 Mock data
 ---------
@@ -78,3 +62,4 @@ Troubleshooting
 - If you do not see the latest behavior, hard refresh the page.
 - If schedule search shows no exact route, the app should still generate demo schedules.
 - If quote creation cannot reach `/api/quotes`, the app should compute a local demo quote automatically.
+- If Azure mode is selected and the quotes service fails, the app now shows the service error so you can switch to mocked mode explicitly.

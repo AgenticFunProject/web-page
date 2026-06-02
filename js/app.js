@@ -15,42 +15,28 @@ function displayPortName(port) {
 }
 
 const state = {
-    user: null,
     selectedSchedule: null,
     currentQuote: null
 };
 
-function populateDatalist(datalistId, storageKey) {
-    const datalist = document.getElementById(datalistId);
-    const items = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    datalist.innerHTML = items.map(v => `<option value="${v.replace(/"/g, '&quot;')}">`).join('');
+function renderQuoteSourceControls() {
+    const selectedSource = API.quotes.getQuoteSource();
+
+    document.querySelectorAll('input[name="quote-source"]').forEach((input) => {
+        input.checked = input.value === selectedSource;
+    });
+
+    const description = document.getElementById('quote-source-description');
+    description.textContent = selectedSource === 'mock'
+        ? 'Using mocked quote responses from the demo data flow.'
+        : 'Using the live Azure-backed quote service.';
 }
 
-function saveSuggestion(storageKey, value) {
-    if (!value) return;
-    let list = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    list = list.filter(v => v !== value);
-    list.unshift(value);
-    if (list.length > 5) list = list.slice(0, 5);
-    localStorage.setItem(storageKey, JSON.stringify(list));
-}
-
-function migrateOldSuggestions() {
-    const oldEmail = localStorage.getItem('loginEmail');
-    if (oldEmail) {
-        saveSuggestion('suggest:login-email', oldEmail);
-        localStorage.removeItem('loginEmail');
-    }
-    const oldBooking = localStorage.getItem('bookingFormData');
-    if (oldBooking) {
-        try {
-            const { contactName, contactEmail, contactPhone } = JSON.parse(oldBooking);
-            if (contactName) saveSuggestion('suggest:contact-name', contactName);
-            if (contactEmail) saveSuggestion('suggest:contact-email', contactEmail);
-            if (contactPhone) saveSuggestion('suggest:contact-phone', contactPhone);
-        } catch {}
-        localStorage.removeItem('bookingFormData');
-    }
+function clearDisplayedQuote() {
+    state.currentQuote = null;
+    const quoteResult = document.getElementById('quote-result');
+    quoteResult.classList.add('hidden');
+    quoteResult.innerHTML = '';
 }
 
 function showSection(section) {
@@ -61,11 +47,6 @@ function showSection(section) {
     const target = document.getElementById(`${section}-section`);
     target.classList.remove('hidden');
     target.classList.add('active');
-    if (section === 'booking') {
-        populateDatalist('suggest-contact-name', 'suggest:contact-name');
-        populateDatalist('suggest-contact-email', 'suggest:contact-email');
-        populateDatalist('suggest-contact-phone', 'suggest:contact-phone');
-    }
     hideError();
 }
 
@@ -127,7 +108,7 @@ function formatDate(dateStr) {
 const ADDITIONAL_PORTS = ['Rotterdam', 'Shanghai', 'New York', 'Hamburg', 'Los Angeles', 'Hong Kong', 'Singapore', 'Santos'];
 
 async function loadAvailableCities() {
-    const response = await fetch('/mock/db.json?t=' + Date.now());
+    const response = await fetch('/mock/db.json');
     if (!response.ok) {
         throw new Error('Failed to load city list');
     }
@@ -216,59 +197,6 @@ async function initializeEquipmentTypes() {
         '<option value="40FT">40ft Standard</option>' +
         '<option value="40HC">40ft High Cube</option>';
 }
-
-async function handleLogin(email, password) {
-    const data = await API.users.login(email, password);
-    state.user = data.user;
-    TOKEN_STORE._token = data.token;
-    TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
-    localStorage.setItem('session', JSON.stringify({ token: data.token, user: data.user }));
-    saveSuggestion('suggest:login-email', email);
-    document.getElementById('user-display-name').textContent = data.user.displayName || data.user.email;
-    document.getElementById('user-info').classList.remove('hidden');
-    showSection('search');
-}
-
-function restoreSession() {
-    const saved = localStorage.getItem('session');
-    if (!saved) return false;
-    try {
-        const { token, user } = JSON.parse(saved);
-        if (!token || !user) return false;
-        state.user = user;
-        TOKEN_STORE._token = token;
-        TOKEN_STORE._expiresAt = Date.now() + 7 * 24 * 60 * 60 * 1000;
-        document.getElementById('user-display-name').textContent = user.displayName || user.email;
-        document.getElementById('user-info').classList.remove('hidden');
-        showSection('search');
-        return true;
-    } catch { return false; }
-}
-
-function handleLogout() {
-    state.user = null;
-    TOKEN_STORE._token = null;
-    TOKEN_STORE._expiresAt = 0;
-    localStorage.removeItem('session');
-    document.getElementById('user-display-name').textContent = '';
-    document.getElementById('user-info').classList.add('hidden');
-    document.getElementById('login-form').reset();
-    showSection('login');
-}
-
-document.getElementById('login-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    hideError();
-    const email = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value;
-    try {
-        await handleLogin(email, password);
-    } catch (error) {
-        showError(error.message);
-    }
-});
-
-document.getElementById('logout-btn').addEventListener('click', handleLogout);
 
 document.getElementById('search-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -408,10 +336,7 @@ document.getElementById('booking-form').addEventListener('submit', async (e) => 
         quantity: parseInt(document.getElementById('quantity').value),
         cargoWeight: parseInt(document.getElementById('cargo-weight').value)
     };
-    saveSuggestion('suggest:contact-name', bookingData.contactName);
-    saveSuggestion('suggest:contact-email', bookingData.contactEmail);
-    saveSuggestion('suggest:contact-phone', bookingData.contactPhone);
-
+    
     try {
         const confirmation = await API.booking.submit(bookingData);
         displayConfirmation(confirmation);
@@ -422,11 +347,10 @@ document.getElementById('booking-form').addEventListener('submit', async (e) => 
 });
 
 function displayConfirmation(confirmation) {
-    const ref = confirmation.bookingReference || confirmation.referenceNumber || confirmation.id;
     document.getElementById('confirmation-details').innerHTML = `
         <div class="confirmation">
             <p class="status">✓ Booking ${confirmation.status}</p>
-            <div class="ref-number">${ref}</div>
+            <div class="ref-number">${confirmation.referenceNumber}</div>
             <p>Thank you for your booking!</p>
             <div style="text-align: left; margin-top: 2rem;">
                 <h3>Booking Summary</h3>
@@ -442,17 +366,23 @@ function displayConfirmation(confirmation) {
 
 function resetApp() {
     state.selectedSchedule = null;
-    state.currentQuote = null;
+    clearDisplayedQuote();
     document.getElementById('search-form').reset();
     document.getElementById('quote-form').reset();
     document.getElementById('booking-form').reset();
     document.getElementById('search-results').classList.add('hidden');
-    document.getElementById('quote-result').classList.add('hidden');
-    showSection(state.user ? 'search' : 'login');
+    showSection('search');
 }
 
+document.querySelectorAll('input[name="quote-source"]').forEach((input) => {
+    input.addEventListener('change', (event) => {
+        API.quotes.setQuoteSource(event.target.value);
+        clearDisplayedQuote();
+        renderQuoteSourceControls();
+    });
+});
+
+showSection('search');
+renderQuoteSourceControls();
 initializeCityDropdowns();
 initializeEquipmentTypes();
-migrateOldSuggestions();
-populateDatalist('suggest-login-email', 'suggest:login-email');
-if (!restoreSession()) showSection('login');

@@ -159,3 +159,11 @@ Feature: Gateway Development History
     And SchedulesAPI.search() now maps query params (originPort, destinationPort, departureDateFrom, departureDateTo)
     And SchedulesAPI.search() maps cargoCutOff to cutoffDate in responses
     And getScheduleById() tries the live API before falling back to mock data
+
+  Scenario: Inject schedules JWT from gateway proxy
+    Given the schedules service requires Bearer auth with HS256 JWT
+    And the gateway proxy forwarded requests without an Authorization header
+    When commit inject-schedules-jwt was created
+    Then generateSchedulesToken() was added to server.js, signing HS256 JWTs with SCHEDULES_AUTH_SECRET
+    And the proxy handler now injects a schedules:read Bearer token for GET requests to /schedules
+    And the proxy handler now injects a schedules:read+schedules:modify Bearer token for POST/PUT/PATCH/DELETE to /schedules

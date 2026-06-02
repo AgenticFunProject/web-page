@@ -163,7 +163,7 @@ Feature: Gateway Development History
   Scenario: Fix CNSHA→DEHAM quote stub ID and add BRSSZ→USLAX stub
     Given the CNSHA→DEHAM stub in js/api.js used a wrong UUID suffix not matching the quotes service seed
     And BRSSZ→USLAX was a third quotes-service-seeded route with no frontend stub
-    When commit <next-sha> was created
+    When commit 2a29227 was created
     Then QUOTES_SCHEDULE_STUBS in js/api.js was corrected to 7a59721c-cd5d-4d9f-86a0-9aa9f7f6c47b for CNSHA→DEHAM
     And a new stub for BRSSZ→USLAX with id 1ce1ab21-9d58-4a6d-b867-afc93098352f was added
     And all three quote-seeded schedule IDs were seeded as OPEN in the schedules service

@@ -26,8 +26,11 @@ const PORT_ALIASES = {
     NLRTM: 'rotterdam',
     CNSHA: 'shanghai',
     HKHKG: 'hong kong',
-    DEHAM: 'berlin',
-    USNYC: 'washington',
+    DEHAM: 'hamburg',
+    USNYC: 'new york',
+    FRLEH: 'le havre',
+    AEAUH: 'abu dhabi',
+    BRSSZ: 'santos',
     NYC: 'new york',
     LON: 'london'
 };
@@ -65,9 +68,22 @@ const QUOTES_SCHEDULE_STUBS = [
     }
 ];
 
+const PORT_CODE_BY_CITY = Object.fromEntries(
+    Object.entries(PORT_ALIASES).map(([code, city]) => [city, code])
+);
+
 function normalizeSearchTerm(value) {
     const normalized = String(value || '').trim().toLowerCase();
     return PORT_ALIASES[normalized.toUpperCase()] || normalized;
+}
+
+function toPortCode(value) {
+    const normalized = String(value || '').trim().toLowerCase();
+    const upper = normalized.toUpperCase();
+    // Already a port code
+    if (PORT_ALIASES[upper]) return upper;
+    // City name → port code
+    return PORT_CODE_BY_CITY[normalized] || value;
 }
 
 function findStubSchedule(origin, destination) {
@@ -186,8 +202,8 @@ const SchedulesAPI = {
     async search(origin, destination, dateFrom, dateTo) {
         try {
             const params = new URLSearchParams({
-                originPort: origin,
-                destinationPort: destination,
+                originPort: toPortCode(origin),
+                destinationPort: toPortCode(destination),
                 departureDateFrom: dateFrom,
                 departureDateTo: dateTo
             });
